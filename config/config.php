@@ -17,7 +17,7 @@ return [
     // 应用命名空间
     'app_namespace'          => 'app',
     // 应用调试模式
-    'app_debug'              => Env::get('app_debug',false),
+    'app_debug'              => Env::get('app_debug',true),
     'app_trace'              => Env::get('app_trace',false),
     // 应用模式状态
     'app_status'             => '',
