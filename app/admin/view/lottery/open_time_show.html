@@ -1,0 +1,80 @@
+{extend name="common:base" /}
+
+{block name="main"}
+<!--body wrapper start-->
+<div class="wrapper">
+    <div class="pull-left">
+        <a href="javascript:history.go(-1)" data-toggle="tooltip" title="" class="btn btn-default" data-original-title="返回"><i class="fa fa-reply"></i></a>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <!--breadcrumbs start -->
+            <ul class="breadcrumb panel">
+                <li><a href="{:url('Index/index')}"><i class="fa fa-home"></i> 控制台</a></li>
+                <li><a href="{:url('index')}">彩票管理</a></li>
+                <li class="active">开奖时间</li>
+            </ul>
+            <!--breadcrumbs end -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <section class="panel">
+                <div class="panel-body">
+                    <form class="ids" action="" method="post">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>彩票名称</th>
+                                <th>开奖时间</th>
+                                <th>截止时间</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {volist name='data' id='v'}
+                            <tr>
+                                <td>{$v.id}</td>
+                                <td>{$v.name}</td>
+                                <td><input type="text" name="num[{$v['id']}][dateline]" id = "open0_{$v['id']}" value="{$v['dateline']}"></td>
+                                <td><input type="text" name="num[{$v['id']}][open]" id = "open_{$v['id']}" value="{$v['open']}"></td>
+                                <td><input type="hidden" name="num[{$v['id']}][id]" value="{$v['id']}"></td>
+                            </tr>
+                            {/volist}
+                            </tbody>
+                        </table>
+                    </form>
+                    <div style="float: right">
+                     <a href="#"   class="btn btn-success ajax-get" onclick="edit_open_time()" title="修改全部">修改全部</a>
+                    </div>
+                </div>
+            </section>
+            {$page}
+        </div>
+    </div>
+</div>
+
+
+<!--body wrapper end-->
+{/block}
+{block name="js"}
+<script type="text/javascript">
+
+    function edit_open_time() {
+        var dd   = $('.ids');
+         dd.serialize();
+        $.ajax({
+            type: "post",
+            url: "{:url('open_time_edit')}",
+            data:  dd.serialize(),
+            dataType: "json",
+            async: false,
+            success: function(data) {
+                var info = data.msg;
+                alert(info);
+                location.reload();
+            }
+        });
+    }
+</script>
+{/block}

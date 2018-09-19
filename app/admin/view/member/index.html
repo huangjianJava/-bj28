@@ -1,0 +1,246 @@
+{extend name="common:base" /}
+{block name="css"}
+<!--pickers css-->
+<link rel="stylesheet" type="text/css" href="__JS__/bootstrap-datepicker/css/datepicker-custom.css" />
+<link rel="stylesheet" type="text/css" href="__JS__/bootstrap-timepicker/css/timepicker.css" />
+<link rel="stylesheet" type="text/css" href="__JS__/bootstrap-colorpicker/css/colorpicker.css" />
+<link rel="stylesheet" type="text/css" href="__JS__/bootstrap-daterangepicker/daterangepicker-bs3.css" />
+<link rel="stylesheet" type="text/css" href="__JS__/bootstrap-datetimepicker/css/datetimepicker-custom.css" />
+<style>
+    .aaa:hover{
+        transform: scale(1.5);
+    }
+</style>
+{/block}
+{block name="main"}
+<!--body wrapper start-->
+<div class="wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <!--breadcrumbs start -->
+            <ul class="breadcrumb panel">
+                <li><a href="{:url('Index/index')}"><i class="fa fa-home"></i> 控制台</a></li>
+                <li><a href="{:url('index')}">会员管理</a></li>
+                <li class="active">会员信息<span style="color: red">（在线{$on_line|default='0'}人）</span></li>
+            </ul>
+            <!--breadcrumbs end -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <section class="panel">
+                <header class="panel-heading col-xs-12">
+
+                    <form class="form-inline" action="{:url('')}">
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <div class="input-group  custom-date-range">
+                                    <input type="text" class="form-control form_datetime" value="{$_GET['from'] ?? ''}" name="from">
+                                    <span class="input-group-addon">到</span>
+                                    <input type="text" class="form-control form_datetime" value="{$_GET['to'] ?? ''}" name="to">
+                                </div>
+                            </div>
+                            <select class="form-control" name="is_m">
+                                <option value="0">选择方式</option>
+                                <option value="1" {if (isset($_GET['is_m']) && $_GET['is_m'] == 1)}selected{/if}>真人</option>
+                                <option value='2' {if (isset($_GET['is_m']) && $_GET['is_m'] == 2)}selected{/if}>假人</option>
+
+                            </select>
+                            <input type="text" name="mobile" class="form-control" value="{$_GET['mobile'] ?? ''}" placeholder="请输入用户名">
+                            <input type="text" name="uid" class="form-control" value="{$_GET['uid'] ?? ''}" placeholder="请输入用户ID">
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                            <a href="#"  class="btn btn-success ajax-get" onclick="recharge();" title="添加会员">添加会员</a>
+                            <a href="{:url('member/index',array('online'=>1))}"  class="btn btn-warning" title="查看在线会员">查看在线会员</a>
+                        </div>
+                    </form>
+                </header>
+
+                <div class="panel-body">
+                    <form class="ids" action="{:url('del')}" method="post">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <!--<th><input class="check-all" type="checkbox"/></th>-->
+                                <th>玩家ID</th>
+                                <th>头像</th>
+                                <th>用户名</th>
+                                <th>昵称</th>
+                                <th>余额</th>
+                                <th>登陆IP</th>
+                                <th>注册时间</th>
+                                <th>操作</th>
+                                <th>投注记录</th>
+                                <th>流水记录</th>
+                                <th>盈亏</th>
+                                <th>上级</th>
+                                <th>下级</th>
+                                <th>上芬/下芬</th>
+                                <th>成为假人</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {volist name='list' id='v'}
+                            <tr>
+                                <!--<td><input class="ids" type="checkbox" value="{$v.id}" name="ids[]"/></td>-->
+                                <td>{$v.id}</td>
+                                <td>
+                                    {if $v.head}
+                                    <img style="border-radius: 50%;width: 50px"  src="{$v.head}" class="aaa">
+                                    {else/}
+                                    无
+                                    {/if}
+                                </td>
+                                <td>{$v.mobile}</td>
+                                <td>{$v.nickname}</td>
+                                <td>{$v.money}</td>
+                                <td>{$v.login_ip|default=""}</td>
+                                <td>{if (isTimeZero($v.create_at))}{$v.create_at}{/if}</td>
+                                <td>
+                                    <a href="{:url('show_list',['id'=>$v['id']])}" class="fa fa-edit" title="编辑"></a>
+                                    <a href="{:url('del',array('id'=>$v['id']))}" class="fa fa-times confirm " onclick="return confirm('确定删除?删除后将不能找回');" title="删除"></a>
+                                </td>
+                                <td>
+                                    <a href="{:url('lottery/betting',array('id'=>$v['id']))}"  title="查看">查看</a>
+                                </td>
+                                <td>
+                                    <a href="{:url('money/transaction',array('id'=>$v['id']))}"  title="查看">查看</a>
+                                </td>
+                                <td>
+                                    <a href="{:url('money/win_lose_member',array('uid'=>$v['id']))}"  title="查看">总盈亏</a>
+                                </td>
+                                <td>{$v.up_name}</td>
+                                <td>
+                                    <a href="{:url('member/member_down',array('tid'=>$v['id']))}"  title="下级">下级({$v.down_number})</a>
+                                </td>
+                                <td>
+                                    <a href="javascript:;" onclick="up_f('{$v['id']}')"  title="上分">上分</a>/
+                                    <a href="javascript:;" onclick="down_f('{$v['id']}')"   title="下分">下分</a>
+                                </td>
+                                <td>
+                                    {if $v.is_m==0}
+                                    <a href="javascript:;"  class="btn btn-success" onclick="jia_f('{$v['id']}',1)"   title="成为真人">成为真人</a>
+                                    {else/}
+                                    <a href="javascript:;"  class="btn btn-primary" onclick="jia_f('{$v['id']}',0)"   title="成为假人">成为假人</a>
+                                    {/if}
+                                </td>
+                            </tr>
+                            {/volist}
+
+                            </tbody>
+                        </table>
+                    </form>
+
+                    <!--<a href="{:url('del')}" class="btn btn-sm btn-primary ajax-post confirm" target-form="ids">批量删除</a>-->
+
+                </div>
+            </section>
+            {$page}
+        </div>
+
+    </div>
+</div>
+<!--body wrapper end-->
+<!-- Modal -->
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="rechargeModal" class="modal fade">
+    <div class="modal-dialog" style="width:500px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">添加会员</h4>
+            </div>
+            <form class="form-horizontal form-post-addmoney" action="{:url('member/add_member')}" method="post">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="col-lg-3 col-sm-3 control-label">用户名</label>
+                        <div class="col-lg-8">
+                            <input type="text" name="mobile"  class="form-control" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-lg-3 col-sm-3 control-label">用户密码</label>
+                        <div class="col-lg-8">
+                            <input type="text" name="password" class="form-control" value="">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" name="id" id="rid" value=""/>
+                    <button data-dismiss="modal" class="btn btn-default" type="button">取消</button>
+                    <button class="btn btn-primary " type="submit" target-form="form-post-addmoney">提交</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--body wrapper end-->
+<!--body wrapper end-->
+<script type="text/javascript">
+    function recharge() {
+        $('#rechargeModal').modal('show');
+    }
+</script>
+<script type="text/javascript">
+    function jia_f(uid,type) {
+        $.ajax({
+            type: "post",
+            url: "{:url('edit_jia')}",
+            data: {'id':uid,'type':type},
+            dataType: "json",
+            async: false,
+            success: function(data) {
+                var info = data.msg;
+                alert(info);
+                location.reload();
+            }
+        });
+    }
+    function up_f(uid) {
+       var money=prompt("请输入上分金额");
+       if(!money || money==''){
+         return false;
+       }
+        $.ajax({
+            type: "post",
+            url: "{:url('edit_frozen')}",
+            data: {'id':uid,'money':money},
+            dataType: "json",
+            async: false,
+            success: function(data) {
+                var info = data.msg;
+                alert(info);
+                location.reload();
+            }
+        });
+    }
+    function down_f(uid) {
+        var money=prompt("请输入下分金额");
+        if(!money || money==''){
+            return false;
+        }
+        $.ajax({
+            type: "post",
+            url: "{:url('edit_unfreeze')}",
+            data: {'id':uid,'money':money},
+            dataType: "json",
+            async: false,
+            success: function(data) {
+                var info = data.msg;
+                alert(info);
+                location.reload();
+            }
+        });
+    }
+</script>
+{/block}
+<!-- modal -->
+{block name="js"}
+<!--pickers plugins-->
+<script type="text/javascript" src="__JS__/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="__JS__/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="__JS__/bootstrap-daterangepicker/moment.min.js"></script>
+<script type="text/javascript" src="__JS__/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script type="text/javascript" src="__JS__/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+<script type="text/javascript" src="__JS__/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+
+<!--pickers initialization-->
+<script src="__JS__/pickers-init.js"></script>
+{/block}

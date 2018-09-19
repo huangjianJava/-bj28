@@ -1,0 +1,124 @@
+{extend name="common:base" /}
+
+{block name="main"}
+<!--body wrapper start-->
+<div class="wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <!--breadcrumbs start -->
+            <ul class="breadcrumb panel">
+                <li><a href="{:url('Index/index')}"><i class="fa fa-home"></i> 控制台</a></li>
+                <li><a href="{:url('index')}">喊话管理</a></li>
+                <li class="active">系统喊话</li>
+            </ul>
+            <!--breadcrumbs end -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <section class="panel">
+                <header class="panel-heading col-xs-12 ">
+                        <div class="form-group">
+                            <!--<a href="#"  class="btn btn-success ajax-get" onclick="recharge();"title="添加喊话">添加喊话</a>-->
+                            <span style="color: red">温馨提示：前端只显示最后五条喊话</span>
+                        </div>
+
+                </header>
+                <div class="panel-body">
+                    <form class="ids" action="" method="post">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>喊话ID</th>
+                                <th>标题</th>
+                                <th>距封盘时间（s）</th>
+                                <th>内容</th>
+                                <th>时间</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {volist name='data' id='v'}
+                            <tr>
+                                <td>{$v.id}</td>
+                                <td>{$v.info}</td>
+                                <td>{$v.call_time}</td>
+                                <td>{$v.content}</td>
+                                <td>{$v.create_time}</td>
+                                <td>
+                                    <a href="{:url('notice/call_show',['id'=>$v['id']])}" class="fa fa-edit" title="编辑"></a>
+                                    {if $v['is_show']==0}
+                                    <a href="#"   class="btn btn-success ajax-get" onclick="is_show('{$v.id}',1)" title="开启">开启</a>
+                                    {else/}
+                                    <a href="#"   class="btn btn-danger ajax-get" onclick="is_show('{$v.id}',0)" title="关闭">关闭</a>
+                                    {/if}
+                                </td>
+                            </tr>
+                            {/volist}
+
+                            </tbody>
+                        </table>
+                    </form>
+
+                </div>
+            </section>
+            {$page}
+        </div>
+
+    </div>
+</div>
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="rechargeModal" class="modal fade">
+    <div class="modal-dialog" style="width:400px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">添加喊话</h4>
+            </div>
+            <form class="form-horizontal form-post-addmoney" action="{:url('add_call')}" method="post">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="col-lg-3 col-sm-3 control-label">喊话标题</label>
+                        <div class="col-lg-8">
+                            <input name="info"  class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 col-sm-3 control-label">喊话内容</label>
+                        <div class="col-lg-8">
+                            <textarea name="content" rows="6" class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 col-sm-3 control-label">距封盘时间</label>
+                        <div class="col-lg-8">
+                            <input name="call_time"  class="form-control">
+                        </div>
+                    </div>
+                <div class="modal-footer">
+                    <input type="hidden" name="id" id="rid" value=""/>
+                    <button data-dismiss="modal" class="btn btn-default" type="button">取消</button>
+                    <button class="btn btn-primary " type="submit" target-form="form-post-addmoney">提交</button>
+                </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function recharge() {
+        $('#rechargeModal').modal('show');
+    }
+    function is_show(id,is_show) {
+        $.ajax({
+            type: "post",
+            url: "{:url('notice/is_call')}",
+            data: {'id':id,'is_show':is_show},
+            dataType: "json",
+            async: false,
+            success: function(data) {
+                location.reload();
+            }
+        });
+    }
+</script>
+<!--body wrapper end-->
+{/block}

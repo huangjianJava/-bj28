@@ -1,0 +1,96 @@
+{extend name="common:base" /}
+
+{block name="main"}
+<!--body wrapper start-->
+<div class="wrapper">
+    <div class="pull-left">
+
+        <a href="javascript:history.go(-1)" data-toggle="tooltip" title="" class="btn btn-default" data-original-title="返回"><i class="fa fa-reply"></i></a>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <!--breadcrumbs start -->
+            <ul class="breadcrumb panel">
+                <li><a href="{:url('Index/index')}"><i class="fa fa-home"></i> 控制台</a></li>
+                <li><a href="{:url('index')}">{$cate_name}</a></li>
+            </ul>
+            <!--breadcrumbs end -->
+        </div>
+    </div>
+    {foreach $data as $k=>$v}
+    <div class="row">
+        <div class="row">
+            <div class="col-sm-12">
+                <section class="panel">
+                    <form class="gameForm"  method="post" action="{:url('eight_edit')}">
+                    <header class="panel-heading">
+                    </header>
+                    <div class="panel-body">
+                        <div class="col-sm-5">
+                        <div class="adv-table editable-table ">
+                            <label class="control-label">{$v.name}</label>
+                            <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                                <thead>
+                                <tr>
+                                    <th>玩法</th>
+                                    <th>赔率设置</th>
+                                    <th>单注最低</th>
+                                    <th>单注最高</th>
+                                    <th>单期最高</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                               {foreach $v['play_rules'] as $kk=>$vv}
+                                <tr>
+                                    <td>{$vv.title}</td>
+                                    <td><a href="{:url('eight_pei',array('type'=>$vv.type,'hall'=>$v.hall,'cate'=>$v.cate))}">点击进入赔率设置</a></td>
+                                    <td><input type="text" id="from_{$vv.id}" value="{$vv.from}"></td>
+                                    <td><input type="text" id="to_{$vv.id}" value="{$vv.to}"></td>
+                                    <td><input type="text" id="max_{$vv.id}" value="{$vv.max}"></td>
+                                    <td > <a href="#" style="color: white" class="btn btn-success ajax-get" onclick="edit_bet_number('{$vv.id}')" title="保存">保存</a></td>
+                                </tr>
+                               {/foreach}
+                                </tbody>
+                            </table>
+                        </div>
+                        </div>
+                        <!--<div class="form-group">-->
+                            <!--<div class="col-lg-10">-->
+                                <!--<button class="btn btn-primary ajax-post" target-form="gameForm"  type="submit">保存</button>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+    {/foreach}
+</div>
+<script type="text/javascript">
+
+    function edit_bet_number(id) {
+        var openid = 'from_'+id;
+        var from =document.getElementById(openid).value;
+        var toid = 'to_'+id;
+        var to =document.getElementById(toid).value;
+        var maxid = 'max_'+id;
+        var max =document.getElementById(maxid).value;
+        $.ajax({
+            type: "post",
+            url: "{:url('edit_bet_number')}",
+            data: {'from':from,'to':to,'id':id,'max':max},
+            dataType: "json",
+            async: false,
+            success: function(data) {
+                var info = data.msg;
+                alert(info);
+                location.reload();
+            }
+        });
+    }
+</script>
+<!--body wrapper end-->
+{/block}

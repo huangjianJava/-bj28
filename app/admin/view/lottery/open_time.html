@@ -1,0 +1,54 @@
+{extend name="common:base" /}
+
+{block name="main"}
+<!--body wrapper start-->
+<div class="wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <!--breadcrumbs start -->
+            <ul class="breadcrumb panel">
+                <li><a href="{:url('Index/index')}"><i class="fa fa-home"></i> 控制台</a></li>
+                <li><a href="{:url('index')}">彩票管理</a></li>
+                <li class="active">开奖时间</li>
+            </ul>
+            <!--breadcrumbs end -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <section class="panel">
+                <div class="panel-body">
+                    <form class="ids" action="" method="post">
+                        <table class="table">
+                            <thead>
+                            <tr>
+
+                                <th>彩票ID</th>
+                                <th>名称</th>
+                                <th>开奖时间</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {volist name='data' id='v'}
+                            <tr>
+                                <td>{$v.id}</td>
+                                <td>{$v.name}</td>
+                                <td>
+                                    <a href="{:url('lottery/open_time_show',['id'=>$v['id']])}" title="查看开奖时间">查看开奖时间</a>
+                                </td>
+                            </tr>
+                            {/volist}
+
+                            </tbody>
+                        </table>
+                    </form>
+
+                </div>
+            </section>
+        </div>
+
+    </div>
+</div>
+
+<!--body wrapper end-->
+{/block}

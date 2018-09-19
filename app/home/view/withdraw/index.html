@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>提现</title>
+	<script src="__JS__/mui.min.js"></script>
+	<link href="__CSS__/mui.min.css" rel="stylesheet"/>
+	<link rel="stylesheet" type="text/css" href="__CSS__/common.css"/>
+	<link rel="stylesheet" type="text/css" href="__CSS__/index.css"/>
+	<script type="text/javascript" charset="utf-8">
+        mui.init();
+	</script>
+</head>
+<body style="width: 100%;background: url(__IMG__/bg1.png)no-repeat;background-size:100% 100% ;">
+<header class="mui-bar mui-bar-nav">
+	<h1 class="mui-title">提现</h1>
+</header>
+{include file="common/nav" /}
+<div class="mui-content">
+	<ul class="mui-table-view bgtop">
+		<li class="mui-table-view-cell mui-media">
+			<img class="mui-media-object mui-pull-left" style="border-radius: 50%"  src="{$member_info.head|default='__IMG__/user.png'}">
+			<div class="mui-media-body clearfix">
+				<div class="mui-media-body" >
+					<p class="color_ff">账户：<span>{$member_info.mobile}</span></p>
+					<p class="color_ff">余额：<span id="balance">{$member_info.money}</span></p>
+					<p class="color_ff">返水：<span>{$member_info.back}</span></p>
+				</div>
+			</div>
+		</li>
+	</ul>
+	<form action="" method="post" class="form_box">
+		<p class="mui-h6">本平台最低上下分50起</p>
+	</form>
+	<ul class="clearfix recharge_box">
+		<li class="alipay_exchange"> <a href="javascript:void(0);"><i></i>支付宝提现</a> </li>
+	</ul>
+	<div class="clearfix sever_box1">
+		<a href="{:url('mine/sever_qq')}" class="sever_a"><img src="__IMG__/s02.png"/>QQ客服</a>
+		<a href="{:url('mine/sever_wechat')}" class="sever_a"><img src="__IMG__/s03.png"/>微信客服</a>
+	</div>
+	<div class="overlay"></div>
+	<div class="spring spring_alipay">
+		<div class="clearfix">
+			<img class="right dell_img" src="__IMG__/dell.png" alt="" />
+		</div>
+		<div class="spring_box text-center">
+			<p class="color_ff">支付宝提现</p>
+			<p><input type="number"  id="money" value="" placeholder="请输入提现金额" /></p>
+			<p><input type="text"    id="name" value=""    placeholder="请输入支付宝账号" /></p>
+			<!--<p><input type="password"    id="funs_pass" value=""    placeholder="请输入资金密码" /></p>-->
+			<p><a href="javascript:void(0);" class="spring_a" id="ali_tj">确定</a></p>
+		</div>
+	</div>
+</div>
+<script src="__JS__/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__JS__/index.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    $(function(){
+        $("body").css("height",$(document).height());
+        $("#index_icon").css("width",$("#index_icon").height());
+        //提现方式点击事件
+        var index;
+        $(".recharge_box li").click(function(){
+            index=$(this).index();
+            $(this).addClass("active").siblings().removeClass("active");
+            $(".recharge_div").eq(index).addClass("active").siblings().removeClass("active");
+        })
+    })
+</script>
+<script src="__JS__/layer_mobile/layer.js" ></script>
+<script src="__JS__/rooms.js" ></script>
+<script>
+    $('#ali_tj').click(function () {
+        var name       = $('#name').val();
+        var money      = $('#money').val();
+//        var funs_pass  = $('#funs_pass').val();
+        if(name==""){
+            my_error('请填写昵称');
+            return false;
+        }
+        if(money==""){
+            my_error('请填写提现金额');
+            return false;
+        }
+//        if(funs_pass==""){
+//            my_error('请填写资金密码');
+//            return false;
+//        }
+        $.ajax({
+            type: "post",
+            url: "{:url('withdraw/do_withdraw')}",
+            data: {
+                "name": name,
+                'money': money,
+//                'funds_pass': funs_pass
+            },
+            dataType: "__JS__on",
+            async: false,
+            success: function(data) {
+                var ret = data.ret;
+                var msg = data.msg;
+                var balance = data.data.balance;
+                if(ret=='200'){
+                    console.log(balance);
+                    $('#balance').html(balance);
+                    my_error(msg);
+                }else{
+                    my_error(msg);
+                }
+            }
+        });
+    })
+
+</script>
+</body>
+</html>

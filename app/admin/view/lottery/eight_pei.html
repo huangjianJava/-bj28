@@ -1,0 +1,93 @@
+{extend name="common:base" /}
+
+{block name="main"}
+<!--body wrapper start-->
+<div class="wrapper">
+    <div class="pull-left">
+
+        <a href="javascript:history.go(-1)" data-toggle="tooltip" title="" class="btn btn-default" data-original-title="返回"><i class="fa fa-reply"></i></a>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <!--breadcrumbs start -->
+            <ul class="breadcrumb panel">
+                <li><a href="{:url('Index/index')}"><i class="fa fa-home"></i> 控制台</a></li>
+                <li><a href="{:url('index')}">赔率设置</a></li>
+            </ul>
+            <!--breadcrumbs end -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="row">
+            <div class="col-sm-12">
+                <section class="panel">
+                    <form class="gameForm"  method="post" action="{:url('edit_pei')}">
+                    <header class="panel-heading">
+                    </header>
+                    <div class="panel-body">
+                        <div class="col-sm-5">
+                        <div class="adv-table editable-table ">
+                            <div> <label class="control-label">{$cate_name}-->{$hall_name}-->{$type_name}-->赔率设置</label></div>
+                            <div  style="float: left">
+                            {notempty name="data_s"}
+                            <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                                <thead>
+                                <tr>
+                                    <th>中奖</th>
+                                    <th>赔率</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {foreach $data_s as $k=>$v}
+                                <tr>
+                                    <td>{$v.rule}</td>
+                                    <td>
+                                        <input type="text" class="form-control small" name="{$v.id}" value="{$v.rate}">
+                                    </td>
+                                </tr>
+                                {/foreach}
+                                </tbody>
+                            </table>
+                           {/notempty}
+                            </div>
+                            <div style="float: left">
+                            {notempty name="data_d"}
+                            <table class="table table-striped table-hover table-bordered" >
+                                <thead>
+                                <tr>
+                                    <th>中奖</th>
+                                    <th>赔率</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {foreach $data_d as $k=>$v}
+
+                                <tr>
+                                    <td>{$v.rule}</td>
+                                    <td>
+                                        <input type="text" class="form-control small" name="{$v.id}" value="{$v.rate}">
+                                    </td>
+                                </tr>
+                                {/foreach}
+                                </tbody>
+                            </table>
+                             {/notempty}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-lg-10">
+                                <button class="btn btn-primary " target-form="gameForm"  type="submit">保存</button>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+<!--body wrapper end-->
+{/block}

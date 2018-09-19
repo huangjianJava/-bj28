@@ -1,0 +1,223 @@
+---------------------------------------------------------------
+[ 2018-08-14T21:33:08+08:00 ] 172.26.190.95 36.251.192.155 GET /home/mine/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001021s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_member` [ RunTime:0.000941s ]
+[ sql ] [ SQL ] SELECT `mobile`,`nickname`,`money`,`head` FROM `dl_member` WHERE  `id` = 227 LIMIT 1 [ RunTime:0.000250s ]
+---------------------------------------------------------------
+[ 2018-08-14T21:33:08+08:00 ] 172.26.190.95 36.251.192.155 GET /home/index/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000971s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_member` [ RunTime:0.001248s ]
+[ sql ] [ SQL ] SELECT `mobile`,`head`,`money` FROM `dl_member` WHERE  `id` = 227 LIMIT 1 [ RunTime:0.000314s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_setting` [ RunTime:0.000638s ]
+[ sql ] [ SQL ] SELECT `wx` FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000276s ]
+---------------------------------------------------------------
+[ 2018-08-14T21:33:09+08:00 ] 172.26.190.95 36.251.192.155 GET /home/game/cqssc.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000958s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_member` [ RunTime:0.001043s ]
+[ sql ] [ SQL ] SELECT `id`,`nickname`,`mobile`,`money`,`head`,`is_m` FROM `dl_member` WHERE  `id` = 227 LIMIT 1 [ RunTime:0.000253s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_at_ssc` [ RunTime:0.000639s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_at_ssc` ORDER BY id desc LIMIT 30 [ RunTime:0.000350s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_setting` [ RunTime:0.000663s ]
+[ sql ] [ SQL ] SELECT `wx` FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000265s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000218s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_notice` [ RunTime:0.000588s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_notice` [ RunTime:0.000196s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_call` [ RunTime:0.000606s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_call` [ RunTime:0.000188s ]
+---------------------------------------------------------------
+[ 2018-08-14T21:33:11+08:00 ] 172.26.190.95 111.30.142.252 POST /home/game/get_balance.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000915s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_single` [ RunTime:0.000951s ]
+[ sql ] [ SQL ] SELECT `id`,`money`,`z_money` FROM `dl_single` WHERE  `uid` = 1357  AND `stage` = '20180814093'  AND `state` = 1  AND `is_read` = 0 [ RunTime:0.000334s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_member` [ RunTime:0.000804s ]
+[ sql ] [ SQL ] SELECT `money`,`nickname` FROM `dl_member` WHERE  `id` = 1357 LIMIT 1 [ RunTime:0.000315s ]
+---------------------------------------------------------------
+[ 2018-08-14T21:33:14+08:00 ] 172.26.190.95 36.251.192.155 POST /home/game/betting.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001088s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_setting` [ RunTime:0.000935s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000302s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_member` [ RunTime:0.000761s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_member` WHERE  `id` = 227 LIMIT 1 [ RunTime:0.000386s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_at_ssc` [ RunTime:0.000582s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_at_ssc` ORDER BY id desc LIMIT 1 [ RunTime:0.000186s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_bet` [ RunTime:0.000630s ]
+[ sql ] [ SQL ] SELECT `from`,`to`,`max` FROM `dl_bet` WHERE  `cate` = 5  AND `type` = 14 LIMIT 1 [ RunTime:0.000284s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_single` [ RunTime:0.000925s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `dl_single` WHERE  `stage` = '20180814094'  AND `number` = '大'  AND `uid` = 227  AND `type` = 14 LIMIT 1 [ RunTime:0.000444s ]
+[ sql ] [ SQL ] INSERT INTO `dl_single` (`uid` , `stage` , `cate` , `type` , `hall` , `number` , `money` , `balance` , `ip` , `create_at` , `content` , `login_way`) SELECT 227,'20180814094','5','14','1','大',450,7722,'36.251.192.155',1534253594,'大/450',3 [ RunTime:0.000348s ]
+[ sql ] [ SQL ] UPDATE `dl_member`  SET `money`=7722  WHERE  `id` = 227 [ RunTime:0.000359s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_detail` [ RunTime:0.000751s ]
+[ sql ] [ SQL ] INSERT INTO `dl_detail` (`uid` , `type` , `money` , `balance` , `cate` , `exp` , `explain` , `hall` , `create_at`) VALUES (227 , 2 , 450 , 7722 , 5 , 5 , '期数20180814094,投注大/450' , 1 , 1534253594) [ RunTime:0.000347s ]
+---------------------------------------------------------------
+[ 2018-08-14T21:33:15+08:00 ] 172.26.190.95 36.251.192.155 POST /admin/money/is_recharge.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000927s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_right` [ RunTime:0.000820s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_right` WHERE  `pid` = 0  AND `status` = 1 ORDER BY sort asc [ RunTime:0.000300s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_right` WHERE  `pid` = 1  AND `status` = 1 ORDER BY sort asc [ RunTime:0.000297s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_right` WHERE  `pid` = 3  AND `status` = 1 ORDER BY sort asc [ RunTime:0.000228s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_right` WHERE  `pid` = 19  AND `status` = 1 ORDER BY sort asc [ RunTime:0.000282s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_right` WHERE  `pid` = 15  AND `status` = 1 ORDER BY sort asc [ RunTime:0.000276s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_right` WHERE  `pid` = 7  AND `status` = 1 ORDER BY sort asc [ RunTime:0.000245s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_right` WHERE  `pid` = 28  AND `status` = 1 ORDER BY sort asc [ RunTime:0.000219s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_right` WHERE  `pid` = 13  AND `status` = 1 ORDER BY sort asc [ RunTime:0.000275s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_right` WHERE  `pid` = 11  AND `status` = 1 ORDER BY sort asc [ RunTime:0.000299s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_recharge` [ RunTime:0.000780s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_recharge` WHERE  `is_read` = 0 ORDER BY id desc LIMIT 1 [ RunTime:0.000253s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_withdrawals` [ RunTime:0.000611s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_withdrawals` WHERE  `is_read` = 0 ORDER BY id desc LIMIT 1 [ RunTime:0.000258s ]
+---------------------------------------------------------------
+[ 2018-08-14T21:33:17+08:00 ] 172.26.190.95 36.251.192.155 POST /home/game/get_balance.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001016s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_single` [ RunTime:0.000874s ]
+[ sql ] [ SQL ] SELECT `id`,`money`,`z_money` FROM `dl_single` WHERE  `uid` = 194  AND `stage` = '20180814093'  AND `state` = 1  AND `is_read` = 0 [ RunTime:0.000588s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_member` [ RunTime:0.000765s ]
+[ sql ] [ SQL ] SELECT `money`,`nickname` FROM `dl_member` WHERE  `id` = 194 LIMIT 1 [ RunTime:0.000277s ]
+---------------------------------------------------------------
+[ 2018-08-14T21:33:18+08:00 ] 172.26.190.95 36.251.192.155 POST /home/game/get_balance.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000954s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_single` [ RunTime:0.000954s ]
+[ sql ] [ SQL ] SELECT `id`,`money`,`z_money` FROM `dl_single` WHERE  `uid` = 219  AND `stage` = '20180814093'  AND `state` = 1  AND `is_read` = 0 [ RunTime:0.000469s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_member` [ RunTime:0.000774s ]
+[ sql ] [ SQL ] SELECT `money`,`nickname` FROM `dl_member` WHERE  `id` = 219 LIMIT 1 [ RunTime:0.000370s ]
+---------------------------------------------------------------
+[ 2018-08-14T21:33:19+08:00 ] 172.26.190.95 36.251.192.155 POST /home/game/get_balance.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000999s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_single` [ RunTime:0.001021s ]
+[ sql ] [ SQL ] SELECT `id`,`money`,`z_money` FROM `dl_single` WHERE  `uid` = 293  AND `stage` = '20180814093'  AND `state` = 1  AND `is_read` = 0 [ RunTime:0.000583s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_member` [ RunTime:0.000925s ]
+[ sql ] [ SQL ] SELECT `money`,`nickname` FROM `dl_member` WHERE  `id` = 293 LIMIT 1 [ RunTime:0.000338s ]
+---------------------------------------------------------------
+[ 2018-08-14T21:33:24+08:00 ] 172.26.190.95 36.251.192.155 POST /home/game/get_balance.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000940s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_single` [ RunTime:0.000939s ]
+[ sql ] [ SQL ] SELECT `id`,`money`,`z_money` FROM `dl_single` WHERE  `uid` = 227  AND `stage` = '20180814093'  AND `state` = 1  AND `is_read` = 0 [ RunTime:0.000488s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_member` [ RunTime:0.000751s ]
+[ sql ] [ SQL ] SELECT `money`,`nickname` FROM `dl_member` WHERE  `id` = 227 LIMIT 1 [ RunTime:0.000280s ]
+---------------------------------------------------------------
+[ 2018-08-14T21:33:26+08:00 ] 172.26.190.95 111.30.142.252 POST /home/game/get_balance.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000974s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_single` [ RunTime:0.000946s ]
+[ sql ] [ SQL ] SELECT `id`,`money`,`z_money` FROM `dl_single` WHERE  `uid` = 1357  AND `stage` = '20180814093'  AND `state` = 1  AND `is_read` = 0 [ RunTime:0.000488s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_member` [ RunTime:0.000769s ]
+[ sql ] [ SQL ] SELECT `money`,`nickname` FROM `dl_member` WHERE  `id` = 1357 LIMIT 1 [ RunTime:0.000273s ]
+---------------------------------------------------------------
+[ 2018-08-14T21:33:27+08:00 ] 172.26.190.95 36.251.192.155 POST /admin/money/is_recharge.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001040s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_right` [ RunTime:0.001091s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_right` WHERE  `pid` = 0  AND `status` = 1 ORDER BY sort asc [ RunTime:0.000337s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_right` WHERE  `pid` = 1  AND `status` = 1 ORDER BY sort asc [ RunTime:0.000258s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_right` WHERE  `pid` = 3  AND `status` = 1 ORDER BY sort asc [ RunTime:0.000237s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_right` WHERE  `pid` = 19  AND `status` = 1 ORDER BY sort asc [ RunTime:0.000320s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_right` WHERE  `pid` = 15  AND `status` = 1 ORDER BY sort asc [ RunTime:0.000263s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_right` WHERE  `pid` = 7  AND `status` = 1 ORDER BY sort asc [ RunTime:0.000270s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_right` WHERE  `pid` = 28  AND `status` = 1 ORDER BY sort asc [ RunTime:0.000305s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_right` WHERE  `pid` = 13  AND `status` = 1 ORDER BY sort asc [ RunTime:0.000275s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_right` WHERE  `pid` = 11  AND `status` = 1 ORDER BY sort asc [ RunTime:0.000318s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_recharge` [ RunTime:0.001011s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_recharge` WHERE  `is_read` = 0 ORDER BY id desc LIMIT 1 [ RunTime:0.000278s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_withdrawals` [ RunTime:0.000809s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_withdrawals` WHERE  `is_read` = 0 ORDER BY id desc LIMIT 1 [ RunTime:0.000308s ]
+---------------------------------------------------------------
+[ 2018-08-14T21:33:30+08:00 ] 172.26.190.95 111.161.54.12 GET /?parent_id=227
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001191s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_member` [ RunTime:0.000926s ]
+[ sql ] [ SQL ] SELECT `mobile`,`head`,`money` FROM `dl_member` WHERE  `id` = 1356 LIMIT 1 [ RunTime:0.000362s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_setting` [ RunTime:0.000603s ]
+[ sql ] [ SQL ] SELECT `wx` FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000194s ]
+---------------------------------------------------------------
+[ 2018-08-14T21:33:32+08:00 ] 172.26.190.95 36.251.192.155 POST /home/game/get_balance.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001030s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_single` [ RunTime:0.000871s ]
+[ sql ] [ SQL ] SELECT `id`,`money`,`z_money` FROM `dl_single` WHERE  `uid` = 194  AND `stage` = '20180814093'  AND `state` = 1  AND `is_read` = 0 [ RunTime:0.000314s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_member` [ RunTime:0.000690s ]
+[ sql ] [ SQL ] SELECT `money`,`nickname` FROM `dl_member` WHERE  `id` = 194 LIMIT 1 [ RunTime:0.000203s ]
+---------------------------------------------------------------
+[ 2018-08-14T21:33:33+08:00 ] 172.26.190.95 36.251.192.155 POST /home/game/get_balance.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001016s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_single` [ RunTime:0.000879s ]
+[ sql ] [ SQL ] SELECT `id`,`money`,`z_money` FROM `dl_single` WHERE  `uid` = 219  AND `stage` = '20180814093'  AND `state` = 1  AND `is_read` = 0 [ RunTime:0.000312s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_member` [ RunTime:0.000640s ]
+[ sql ] [ SQL ] SELECT `money`,`nickname` FROM `dl_member` WHERE  `id` = 219 LIMIT 1 [ RunTime:0.000199s ]
+---------------------------------------------------------------
+[ 2018-08-14T21:33:33+08:00 ] 172.26.190.95 123.151.77.91 GET /home/game/cqssc.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001003s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_member` [ RunTime:0.000996s ]
+[ sql ] [ SQL ] SELECT `id`,`nickname`,`mobile`,`money`,`head`,`is_m` FROM `dl_member` WHERE  `id` = 451 LIMIT 1 [ RunTime:0.000588s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_at_ssc` [ RunTime:0.000550s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_at_ssc` ORDER BY id desc LIMIT 30 [ RunTime:0.000241s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_setting` [ RunTime:0.000673s ]
+[ sql ] [ SQL ] SELECT `wx` FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000209s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000194s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_notice` [ RunTime:0.000591s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_notice` [ RunTime:0.000197s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_call` [ RunTime:0.000603s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_call` [ RunTime:0.000229s ]
+---------------------------------------------------------------
+[ 2018-08-14T21:33:34+08:00 ] 172.26.190.95 36.251.192.155 POST /home/game/get_balance.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000868s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_single` [ RunTime:0.000908s ]
+[ sql ] [ SQL ] SELECT `id`,`money`,`z_money` FROM `dl_single` WHERE  `uid` = 293  AND `stage` = '20180814093'  AND `state` = 1  AND `is_read` = 0 [ RunTime:0.000300s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_member` [ RunTime:0.000703s ]
+[ sql ] [ SQL ] SELECT `money`,`nickname` FROM `dl_member` WHERE  `id` = 293 LIMIT 1 [ RunTime:0.000199s ]
+---------------------------------------------------------------
+[ 2018-08-14T21:33:34+08:00 ] 172.26.190.95 123.151.77.91 POST /home/game/betting.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000846s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_setting` [ RunTime:0.000797s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000300s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_member` [ RunTime:0.000760s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_member` WHERE  `id` = 1357 LIMIT 1 [ RunTime:0.000396s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_at_ssc` [ RunTime:0.000568s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_at_ssc` ORDER BY id desc LIMIT 1 [ RunTime:0.000178s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_bet` [ RunTime:0.000650s ]
+[ sql ] [ SQL ] SELECT `from`,`to`,`max` FROM `dl_bet` WHERE  `cate` = 5  AND `type` = 14 LIMIT 1 [ RunTime:0.000245s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_single` [ RunTime:0.000922s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `dl_single` WHERE  `stage` = '20180814094'  AND `number` = '大'  AND `uid` = 1357  AND `type` = 14 LIMIT 1 [ RunTime:0.000383s ]
+[ sql ] [ SQL ] INSERT INTO `dl_single` (`uid` , `stage` , `cate` , `type` , `hall` , `number` , `money` , `balance` , `ip` , `create_at` , `content` , `login_way`) SELECT '1357','20180814094','5','14','1','大',30,150,'123.151.77.91',1534253614,'大/30',3 [ RunTime:0.000414s ]
+[ sql ] [ SQL ] UPDATE `dl_member`  SET `money`=150  WHERE  `id` = 1357 [ RunTime:0.000321s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_detail` [ RunTime:0.000703s ]
+[ sql ] [ SQL ] INSERT INTO `dl_detail` (`uid` , `type` , `money` , `balance` , `cate` , `exp` , `explain` , `hall` , `create_at`) VALUES (1357 , 2 , 30 , 150 , 5 , 5 , '期数20180814094,投注大/30' , 1 , 1534253614) [ RunTime:0.000328s ]
+---------------------------------------------------------------
+[ 2018-08-14T21:33:39+08:00 ] 172.26.190.95 36.251.192.155 POST /admin/money/is_recharge.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001032s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_right` [ RunTime:0.000873s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_right` WHERE  `pid` = 0  AND `status` = 1 ORDER BY sort asc [ RunTime:0.000351s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_right` WHERE  `pid` = 1  AND `status` = 1 ORDER BY sort asc [ RunTime:0.000328s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_right` WHERE  `pid` = 3  AND `status` = 1 ORDER BY sort asc [ RunTime:0.000269s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_right` WHERE  `pid` = 19  AND `status` = 1 ORDER BY sort asc [ RunTime:0.000374s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_right` WHERE  `pid` = 15  AND `status` = 1 ORDER BY sort asc [ RunTime:0.000258s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_right` WHERE  `pid` = 7  AND `status` = 1 ORDER BY sort asc [ RunTime:0.000269s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_right` WHERE  `pid` = 28  AND `status` = 1 ORDER BY sort asc [ RunTime:0.000371s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_right` WHERE  `pid` = 13  AND `status` = 1 ORDER BY sort asc [ RunTime:0.000235s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_right` WHERE  `pid` = 11  AND `status` = 1 ORDER BY sort asc [ RunTime:0.000288s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_recharge` [ RunTime:0.000796s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_recharge` WHERE  `is_read` = 0 ORDER BY id desc LIMIT 1 [ RunTime:0.000264s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_withdrawals` [ RunTime:0.000797s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_withdrawals` WHERE  `is_read` = 0 ORDER BY id desc LIMIT 1 [ RunTime:0.000312s ]
+---------------------------------------------------------------
+[ 2018-08-14T21:33:39+08:00 ] 172.26.190.95 36.251.192.155 POST /home/game/get_balance.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000996s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_single` [ RunTime:0.000873s ]
+[ sql ] [ SQL ] SELECT `id`,`money`,`z_money` FROM `dl_single` WHERE  `uid` = 227  AND `stage` = '20180814093'  AND `state` = 1  AND `is_read` = 0 [ RunTime:0.000490s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_member` [ RunTime:0.000782s ]
+[ sql ] [ SQL ] SELECT `money`,`nickname` FROM `dl_member` WHERE  `id` = 227 LIMIT 1 [ RunTime:0.000331s ]
+---------------------------------------------------------------
+[ 2018-08-14T21:33:40+08:00 ] 172.26.190.95 111.161.54.12 GET /home/game/cqssc.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000849s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_member` [ RunTime:0.000952s ]
+[ sql ] [ SQL ] SELECT `id`,`nickname`,`mobile`,`money`,`head`,`is_m` FROM `dl_member` WHERE  `id` = 1356 LIMIT 1 [ RunTime:0.000363s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_at_ssc` [ RunTime:0.000597s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_at_ssc` ORDER BY id desc LIMIT 30 [ RunTime:0.000203s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_setting` [ RunTime:0.000564s ]
+[ sql ] [ SQL ] SELECT `wx` FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000213s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000282s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_notice` [ RunTime:0.000539s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_notice` [ RunTime:0.000221s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_call` [ RunTime:0.000597s ]
+[ sql ] [ SQL ] SELECT * FROM `dl_call` [ RunTime:0.000189s ]
+---------------------------------------------------------------
+[ 2018-08-14T21:33:42+08:00 ] 172.26.190.95 125.39.46.25 POST /home/game/get_balance.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000881s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_single` [ RunTime:0.000910s ]
+[ sql ] [ SQL ] SELECT `id`,`money`,`z_money` FROM `dl_single` WHERE  `uid` = 1357  AND `stage` = '20180814093'  AND `state` = 1  AND `is_read` = 0 [ RunTime:0.000563s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `dl_member` [ RunTime:0.000715s ]
+[ sql ] [ SQL ] SELECT `money`,`nickname` FROM `dl_member` WHERE  `id` = 1357 LIMIT 1 [ RunTime:0.000356s ]

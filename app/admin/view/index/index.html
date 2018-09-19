@@ -1,0 +1,110 @@
+{extend name="common:base" /}
+
+{block name="main"}
+<!--body wrapper start-->
+<div class="wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <!--breadcrumbs start -->
+            <ul class="breadcrumb panel">
+                <li><a href="{:url('Index/index')}"><i class="fa fa-home"></i> 控制台</a></li>
+            </ul>
+            <!--breadcrumbs end -->
+        </div>
+        <h2 style="text-align: center;font-size: xx-large; color: #65CEA7;margin-top: 100px">欢迎来到天猫国际后台管理系统</h2>
+
+        <header class="panel-heading col-xs-12 ">
+            <a href="{:url('money/recharge')}"  class="btn btn-primary " title="充值待审核">充值待审核（{$back.recharge_wait|default=0.00}）</a>
+            <a href="{:url('money/cash')}"  class="btn btn-primary " title="提现待审核">提现待审核（{$back.withdraw_wait|default=0.00}）</a>
+        </header>
+
+        <div class="row states-info" style="margin-top: 100px">
+            <div class="col-md-3">
+                <div class="panel yellow-bg" style="height: 150px">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <i class="fa fa-eye"></i>
+                            </div>
+                            <div class="col-xs-8">
+                                <span class="state-title">  会员总数  </span>
+                                <h4>{$back.member_number}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="panel blue-bg" style="height: 150px">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <i class="fa fa-gavel"></i>
+                            </div>
+                            <div class="col-xs-8">
+                                <span class="state-title">  余额总额  </span>
+                                <h4>{$back.balance_total|default=0.00}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="panel red-bg" style="height: 150px">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <i class="fa fa-eye"></i>
+                            </div>
+                            <div class="col-xs-8">
+                                <span class="state-title">  今日盈亏  </span>
+                                <h4>{$back.win_lose|default=0.00}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row states-info" style="margin-top: 20px">
+            <div class="col-md-3" >
+                <div class="panel yellow-bg" style="height: 150px">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <i class="fa fa-money"></i>
+                            </div>
+                            <div class="col-xs-8">
+                                <span class="state-title"> 今日充值 </span>
+                                <h4>{$back.today_recharge|default=0.00}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="panel green-bg" style="height: 150px">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <i class="fa fa-tag"></i>
+                            </div>
+                            <div class="col-xs-8">
+                                <span class="state-title">  今日提现  </span>
+                                <h4>{$back.today_withdraw|default=0.00}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<!--body wrapper end-->
+{/block}
+{block name="js"}
+{/block}
+
+

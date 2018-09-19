@@ -1,0 +1,231 @@
+{extend name="common:base" /}
+
+{block name="main"}
+<style>
+    .aaa:hover{
+        transform: scale(5);
+    }
+</style>
+<!--body wrapper start-->
+<div class="wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <!--breadcrumbs start -->
+            <ul class="breadcrumb panel">
+                <li><a href="{:url('Index/index')}"><i class="fa fa-home"></i> 控制台</a></li>
+                <li><a href="{:url('index')}">设置中心</a></li>
+                <li class="active">收款二维码</li>
+            </ul>
+            <!--breadcrumbs end -->
+        </div>
+    </div>
+    <div class="row">
+        <header class="panel-heading col-xs-12 ">
+            <form class="form-inline" action="{:url('')}">
+                    <select name="type" class="form-control ">
+                        <option value="" >选择支付类型</option>
+                        <option value="1">微信</option>
+                        <option value="2">支付宝</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                   <a href="#"  class="btn btn-success ajax-get" onclick="recharge();" title="添加收款参数">添加收款参数</a>
+            </form>
+        </header>
+        <div class="col-sm-12">
+            <section class="panel">
+                <div class="panel-body">
+                    <form class="ids" action="" method="post">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>二维码ID</th>
+                                <th>所属人姓名</th>
+                                <th>二维码</th>
+                                <th>类型</th>
+                                <th>微信昵称/支付宝账号</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {volist name='data' id='v'}
+                            <tr>
+                                <td>{$v.id}</td>
+                                <td>{$v.title}</td>
+                                <td><img width="50" src="URL_IMG{$v.qrcode}" class="aaa"></td>
+                                <td>{if $v.type==1}微信{elseif $v.type==2}支付宝{/if}</td>
+                                <td>{$v.k_name|default="无"}</td>
+                                <td>
+                                    <a href="{:url('operation/qrcode_show',['id'=>$v['id']])}" class="fa fa-edit" title="编辑"></a>
+                                    <!--<a href="{:url('operation/qrcode_del',['id'=>$v['id']])}" class="fa fa-times confirm "  title="删除"></a>-->
+                                </td>
+                            </tr>
+                            {/volist}
+
+                            </tbody>
+                        </table>
+                    </form>
+
+                </div>
+            </section>
+        </div>
+
+    </div>
+    <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="rechargeModal" class="modal fade">
+        <div class="modal-dialog" style="width:500px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">添加收款参数</h4>
+                </div>
+                <form class="form-horizontal form-post-addmoney" action="{:url('operation/qrcode_add')}" method="post">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label class="col-lg-3 col-sm-3 control-label">所属人姓名</label>
+                            <div class="col-lg-8">
+                                <input type="text" name="title"  class="form-control" value="">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label  class="col-lg-3 col-sm-3 control-label">类型</label>
+                            <div class="col-lg-8">
+                                <input type="radio" name="type"  value="1" >微信扫
+                                <input type="radio" name="type"  value="2" >支付宝
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 col-sm-3 control-label">	微信昵称/支付宝账号</label>
+                            <div class="col-lg-8">
+                                <input type="text" name="k_name"  class="form-control" value="" placeholder="微信昵称/支付宝名/银行开户名">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="hidden" name="id" id="rid" value=""/>
+                        <button data-dismiss="modal" class="btn btn-default" type="button">取消</button>
+                        <button class="btn btn-primary " type="submit" target-form="form-post-addmoney">提交</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function recharge() {
+        $('#rechargeModal').modal('show');
+    }
+    function edit_open(uid,status) {
+        $.ajax({
+            type: "post",
+            url: "{:url('edit_open')}",
+            data: {'id':uid,'status':status},
+            dataType: "json",
+            async: false,
+            success: function(data) {
+                var info = data.msg;
+                alert(info);
+                location.reload();
+            }
+        });
+    }
+</script>
+<script src="__JS__/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="__JS__/Plupload/plupload.full.min.js"></script>
+<script type="text/javascript">
+
+    var ids = new Array("btn_logo");
+
+    $.each(ids,function(i,n){
+
+        var self = this.toString();
+
+        var uploader_avatar = new plupload.Uploader({
+
+            runtimes: 'gears,html5,html4,silverlight,flash', //上传插件初始化选用那种方式的优先级顺序
+
+            browse_button: self, // 上传按钮
+
+            url: "{:url('upload_one')}", //远程上传地址
+
+            flash_swf_url: '__DTSC__/Moxie.swf',//flash文件地址
+
+            silverlight_xap_url: '__DTSC__/Moxie.xap', //silverlight文件地址
+
+            filters: {
+
+                max_file_size: '100mb', //最大上传文件大小（格式100b, 10kb, 10mb, 1gb）
+
+                mime_types: [//允许文件上传类型
+
+                    {title: "files", extensions: "jpg,png,gif,jpeg"}
+
+                ]
+
+            },
+
+            multi_selection: false, //true:ctrl多文件上传, false 单文件上传
+
+            init: {
+
+                FilesAdded: function(up, files) { //文件上传前
+
+                    uploader_avatar.start();
+
+                },
+
+                UploadProgress: function(up, file) { //上传中，显示进度条
+
+                    var percent = file.percent;
+
+                    $("#" + file.id).find('.bar').css({"width": percent + "%"});
+
+                    $("#" + file.id).find(".percent").text(percent + "%");
+
+                },
+
+                FileUploaded: function(up, file, info) { //文件上传成功的时候触发
+
+                    var data = eval("(" + info.response + ")");//解析返回的json数据
+
+                    if(data.status == 1){
+
+                        var img = self+'_img'
+
+                        document.getElementById(img).src = data.pic;
+
+                        document.getElementById(img).width = 200;
+
+                        $('#'+self).find('i').remove();
+
+                        $('#'+self).find('input').val(data.picd);
+
+                    }else{
+
+                        alert(data.error);
+
+                    }
+
+                },
+
+                Error: function(up, err) { //上传出错的时候触发
+
+                    alert(err.message);
+
+                }
+
+            }
+
+        });
+
+        uploader_avatar.init();
+
+    })
+
+
+
+
+
+
+
+</script>
+<!--body wrapper end-->
+{/block}

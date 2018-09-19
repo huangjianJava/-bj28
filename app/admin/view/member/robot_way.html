@@ -1,0 +1,133 @@
+{extend name="common:base" /}
+{block name="css"}
+<!--pickers css-->
+<link rel="stylesheet" type="text/css" href="__JS__/bootstrap-datepicker/css/datepicker-custom.css" />
+<link rel="stylesheet" type="text/css" href="__JS__/bootstrap-timepicker/css/timepicker.css" />
+<link rel="stylesheet" type="text/css" href="__JS__/bootstrap-colorpicker/css/colorpicker.css" />
+<link rel="stylesheet" type="text/css" href="__JS__/bootstrap-daterangepicker/daterangepicker-bs3.css" />
+<link rel="stylesheet" type="text/css" href="__JS__/bootstrap-datetimepicker/css/datetimepicker-custom.css" />
+<style>
+    .aaa:hover{
+        transform: scale(1.5);
+    }
+    </style>
+{/block}
+{block name="main"}
+<!--body wrapper start-->
+<div class="wrapper">
+    <div class="pull-left">
+        <a href="javascript:history.go(-1)" data-toggle="tooltip" title="" class="btn btn-default" data-original-title="返回"><i class="fa fa-reply"></i></a>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <!--breadcrumbs start -->
+            <ul class="breadcrumb panel">
+                <li><a href="{:url('Index/index')}"><i class="fa fa-home"></i> 控制台</a></li>
+                <li><a href="{:url('index')}">会员管理</a></li>
+                <li class="active">机器人规则</li>
+            </ul>
+            <!--breadcrumbs end -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <section class="panel">
+                <header class="panel-heading col-xs-12">
+                   <a href="#"  class="btn btn-success ajax-get" onclick="recharge();"title="添加机器人规则">添加机器人规则</a>
+                </header>
+                <div class="panel-body">
+                    <form class="ids" action="" method="post">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <!--<th><input class="check-all" type="checkbox"/></th>-->
+                                <th>机器人ID</th>
+                                <th>规则</th>
+                                <th>创建时间</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {volist name='list' id='v'}
+                            <tr>
+                                <!--<td><input class="ids" type="checkbox" value="{$v.id}" name="ids[]"/></td>-->
+                                <td>{$v.id}</td>
+                                <td>{$v.content}</td>
+                                <td>{$v.create_at}</td>
+                                <td>
+                                    <a href="{:url('del_robot_way',array('id'=>$v['id']))}" class="fa fa-times confirm " onclick="return confirm('确定删除?删除后将不能找回');" title="删除"></a>
+                                </td>
+                            {/volist}
+
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </section>
+            {$page}
+        </div>
+
+    </div>
+</div>
+<!--body wrapper end-->
+<!-- Modal -->
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="rechargeModal" class="modal fade">
+    <div class="modal-dialog" style="width:400px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">添加机器人规则</h4>
+            </div>
+            <form class="form-horizontal form-post-addmoney" action="{:url('member/robot_way_add')}" method="post">
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label  class="col-lg-3 col-sm-3 control-label">规则</label>
+                        <div class="col-lg-8">
+                            <input type="text" name="content"  class="form-control" value="">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" name="id" id="rid" value=""/>
+                    <button data-dismiss="modal" class="btn btn-default" type="button">取消</button>
+                    <button class="btn btn-primary " type="submit" target-form="form-post-addmoney">提交</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--body wrapper end-->
+{/block}
+<!-- modal -->
+{block name="js"}
+<!--pickers plugins-->
+<script type="text/javascript" src="__JS__/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="__JS__/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="__JS__/bootstrap-daterangepicker/moment.min.js"></script>
+<script type="text/javascript" src="__JS__/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script type="text/javascript" src="__JS__/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+<script type="text/javascript" src="__JS__/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+
+<!--pickers initialization-->
+<script src="__JS__/pickers-init.js"></script>
+<script type="text/javascript">
+    function recharge() {
+        $('#rechargeModal').modal('show');
+    }
+    function edit_open(uid,status) {
+        $.ajax({
+            type: "post",
+            url: "{:url('edit_open')}",
+            data: {'id':uid,'status':status},
+            dataType: "json",
+            async: false,
+            success: function(data) {
+                var info = data.msg;
+                alert(info);
+                location.reload();
+            }
+        });
+    }
+</script>
+
+{/block}

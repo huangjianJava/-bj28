@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name = "format-detection" content = "telephone=no">
+    <title>天猫国际</title>
+    <link rel="stylesheet" href="__CSS__/swiper.min.css"/>
+    <link rel="stylesheet" href="__CSS__/css.css"/>
+    <script src="__JS__/jquery-2.1.0.js"></script>
+    <script src="__JS__/swiper.min.js"></script>
+    <script src="__JS__/js.js"></script>
+</head>
+<body>
+		
+  <div class="header">
+	下芬
+	<a onclick="window.history.go(-1)">
+		<img src="__IMG__/back.png"/>
+	</a>
+</div>
+<div class="home homea home-a">
+		<div class="top">
+		<p>
+			余芬：<span id="balance">{$member_info.money}</span>
+		</p>
+	</div>
+	<div class="x-name">
+		用户昵称：{$member_info.nickname}
+	</div>
+  	<div class="pay-text uil">
+  		<p class="input">
+			提现金额：
+			<input type="number" id="money" placeholder="请输入提现金额">
+		</p>
+		<p class="input">
+			收款类型：
+			<select id="way">
+				<option value="1">微信</option>
+				<option value="2">支付宝</option>
+			</select>
+		</p>
+		<p class="input">
+			收款账户：
+			<input type="text" id="name" value="{$member_info.wx}" placeholder="请输入收款账户">
+			<input type="hidden" id="wx" value="{$member_info.wx}">
+			<input type="hidden" id="alipay" value="{$member_info.alipay}">
+		</p>
+		<p>
+			<button class="sub" id="ali_tj">提交</button>
+		</p>
+  	</div>
+</div>
+</body>
+<script src="__JS__/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__JS__/layer_mobile/layer.js" ></script>
+<script src="__JS__/rooms.js" ></script>
+<script>
+    $('#ali_tj').click(function () {
+        var name       = $('#name').val();
+        var money      = $('#money').val();
+        var way        = $('#way').val();
+        if(name==""){
+            my_error('请填写账户');
+            return false;
+        }
+        if(money==""){
+            my_error('请填写提现金额');
+            return false;
+        }
+        if(way==""){
+            my_error('请选择提现方式');
+            return false;
+        }
+        $.ajax({
+            type: "post",
+            url: "{:url('mine/do_withdraw')}",
+            data: {
+                "name": name,
+                'money': money,
+                'way': way
+            },
+            dataType: "json",
+            async: false,
+            success: function(data) {
+                var ret = data.ret;
+                var msg = data.msg;
+                var balance = data.data.balance;
+                if(ret=='200'){
+                    $('#balance').html(balance);
+                    my_error(msg);
+                }else{
+                    my_error(msg);
+                }
+            }
+        });
+    })
+	$('#way').change(function () {
+	    var wx     = $('#wx').val();
+        var alipay = $('#alipay').val();
+		if($('#way').val()==1){
+            $('#name').val(wx);
+		}
+        if($('#way').val()==2){
+            $('#name').val(alipay);
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>客服-QQ</title>
+    <script src="__JS__/mui.min.js"></script>
+    <link href="__CSS__/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/common.css"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/index.css"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+    <style type="text/css">
+    	input[type=text]{width: 60%;margin: 0px 0 0 5%;background: transparent;border: 1px solid #CAAE6F;border-radius:5px 0px 0px 5px ;color: #CAAE6F;}
+    	input[type=button]{
+    		background: #CAAE6F;border: none;padding: 10.5px 12px;border-radius:0 5px 5px 0 ;
+    	}
+    </style>
+</head>    
+<body style="width: 100%;background: url(__IMG__/bg.png)no-repeat;background-size:100% 100% ;">
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title">客服中心</h1>
+	</header>
+	{include file="common/nav" /}
+	<div class="mui-content"  id="index">
+		<div class="sever_box padding_t50 text-center">
+			<h4 class="color_ff">点击复制QQ客服号码</h4>
+			<h4 class="color_ff mg_top10">添加QQ客服</h4>
+			<p class="clearfix mg_top20">
+				<input class="left" type="text" name="" id="k_name" value="12345565" readonly="readonly" />
+				<input type="button" class="btn" data-clipboard-action="copy" data-clipboard-target="#k_name" value="点击复制" />
+			</p>
+		</div>
+	    
+	</div>
+	<script src="__JS__/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="__JS__/time2.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("body").css("height",$(document).height());
+			$("#index_icon").css("width",$("#index_icon").height());
+		})
+	</script>
+	<script src="__JS__/layer_mobile/layer.js" ></script>
+	<script src="__JS__/rooms.js" ></script>
+	<script src="__JS__/clipboard.min.js" ></script>
+	<script>
+        var clipboard = new Clipboard('.btn');
+        clipboard.on('success', function(e) {
+            my_error('复制成功')
+        });
+
+        clipboard.on('error', function(e) {
+            my_error('复制失败')
+        });
+	</script>
+</body>
+</html>

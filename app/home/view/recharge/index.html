@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta name = "format-detection" content = "telephone=no">
+	<title>天猫国际</title>
+	<link rel="stylesheet" href="__CSS__/swiper.min.css"/>
+	<link rel="stylesheet" href="__CSS__/css.css"/>
+	<script src="__JS__/jquery-2.1.0.js"></script>
+	<script src="__JS__/swiper.min.js"></script>
+	<script src="__JS__/js.js"></script>
+</head>
+<body>
+<div class="tanc">
+	<div class="cc">
+		<a class="clos" onclick="tanc()">
+			<img src="__IMG__/close.png"/>
+		</a>
+		<h1>
+			<img src="__IMG__/1.jpg"/>
+			<p>
+				<span>天猫国际客服</span>
+				<!--<span>-->
+						<!--<b>上海 金山</b>-->
+				<!--</span>-->
+			</p>
+			<b class="both"></b>
+		</h1>
+		<img src="{$wx_url}" class="er"/>
+		<p class="tex">扫一扫上方二维码，加我微信</p>
+	</div>
+</div>
+<div class="header">
+	上芬
+	<a onclick="window.history.go(-1)">
+		<img src="__IMG__/back.png"/>
+	</a>
+</div>
+<div class="home homea">
+	<div class="top">
+		<p>
+			余芬：{$member_info.money}
+		</p>
+	</div>
+	<div class="ul">
+		<a href="{:url('recharge/wx_pay')}">
+			<img src="__IMG__/wxpay.png"/>
+			<span>微信支付</span>
+		</a>
+		<a href="{:url('recharge/ali_pay')}">
+			<img src="__IMG__/zfbpay.png"/>
+			<span>支付宝支付</span>
+		</a>
+	</div>
+	<div class="button">
+		<button class="gree" onclick="window.location.href='{:url('mine/recharge_record')}'">查看上芬记录</button>
+		<button onclick="tanc()"  class="blue">联系在线客服</button>
+	</div>
+</div>
+
+{include file="common/nav" /}
+</body>
+<script>
+
+</script>
+</html>

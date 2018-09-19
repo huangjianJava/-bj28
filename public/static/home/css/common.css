@@ -1,0 +1,105 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,input,button,textarea,p,th,td,a,section,footer,header { margin:0; padding:0; }   
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,input,button,textarea,p,th,td,a,section,footer,header { margin:0; padding:0; }   
+body { background:#f5f5f5; color:#555; font-size:14px; font-family:Microsoft Yahei; }   
+td,th{ font-size:14px; }   
+h1, h2, h3, h4, h5, h6 { font-weight:normal; }   
+a{color:#333; text-decoration:none;}   
+a:hover { text-decoration:none;}   
+img { border:none; }   
+a{ -webkit-tap-highlight-color:rgba(255,0,0,0);} 
+ol,ul,li { list-style:none; }   
+input, textarea, select, button { font:14px Verdana,Helvetica,Arial,sans-serif; } 
+table { border-collapse:collapse; }   
+/*html {overflow-y: scroll;}*/
+.width100{width: 100%!important;}  
+.width_100{width: 100%!important;}  
+.left{float: left;} 
+.right{float: right;}
+.clearfix:after {content: "."; display: block; height:0; clear:both; visibility: hidden;}   
+.clearfix { *zoom:1; }
+.text-center{text-align:center!important; }
+.text_left{text-align: left!important;}
+.text_right{text-align: right!important;}
+.padding_10{padding: 10px;}
+.padding_5{padding: 5px;}
+.padding_lr5{padding: 0 5px;}
+.padding_lr10{padding: 0 10px;}
+.padding_lr30{padding: 0 30px;}
+a{display: inline-block;cursor: pointer;}
+span,i{display: inline-block;font-style: normal;}
+.red{color: #d04218;}
+.yell{color: #FFB800;}
+.yell1{color: #E6C59A;}
+.red1{color: #E22C2B!important;}
+.red2{color: #FB1F5D!important;}
+.blue{color: #15C0FE;}
+.blue1{color: #40E719!important;}
+.green{color: #8BF02B!important;}
+.hui{color: #9c9c9c;}
+.lin_17{line-height: 17px;}
+input{padding: 0 5px;cursor: pointer;}
+label{display:inline-block}
+.tab_top0{margin-top: 0;}
+.mg_top10{margin-top: 10px;}
+.mg_top5{margin-top: 5px;}
+.mg_top20{margin-top: 20px!important;}
+.mg_top40{margin-top: 40px!important;}
+.mg_tb10{margin: 10px 0!important;}
+.mg_r50{margin-right: 50px;}
+.mg_r20{margin-right: 20px;}
+.mg_r200{margin-right: 200px;}
+.color_ff{color: #fff!important;}
+.color_b{color:#b9c9d8;}
+.color_c{color:#ccc;}
+.bg_ff{background: #fff!important;}
+.bg_c{background: #E5E5E5!important;}
+
+.bor_b{border-bottom: 1px solid #d9d9d9;}
+.bor_r5{border-radius: 5px;}
+.padding_tb10{padding: 10px 0;}
+.padding_tb20{padding: 20px 0;}
+.padding_l20{padding-left: 20px;}
+.padding_t50{padding-top: 50px;}
+.mg_b-10{margin-bottom: -10px;}
+.mg_b20{margin-bottom: 20px!important;}
+.mg_b-5{margin-bottom: -5px;}
+.mg_b10{margin-bottom: 10px;}
+.color_55{color: #555!important;}
+.lin_25{line-height: 25px;}
+.mg_left10{margin-left: 10px;}
+.no_w{font-weight: 100;}
+.bor{border: 1px solid #c7c7c7;border-radius: 5px;}
+.font_14{font-size: 14px!important;}
+.font_16{font-size: 16px!important;}
+.h1{font-size: 36px;}
+.h2{font-size: 30px;}
+.h3{font-size: 24px;}
+.h4{font-size: 18px;}
+.h5{font-size: 14px;}
+.h6{font-size: 12px;}
+.font600{font-weight: 600;}
+.overlay {
+    background: #000;
+    filter: alpha(opacity=30); /* IE的透明度 */
+    opacity: 0.3;  /* 透明度 */
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 10; /* 此处的图层要大于页面 */
+    display:none;
+}
+.basic_a{
+	display: inline-block;
+	background: #E6C59A;
+	color: #14110E;
+	padding: 8px 15px;
+	font-size: 12px;
+	border: none;
+    text-align: center;
+    border-radius:5px ;
+}
+.vertical-align_m{
+	vertical-align: middle;
+}

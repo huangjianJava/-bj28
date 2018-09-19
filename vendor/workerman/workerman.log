@@ -1,0 +1,92 @@
+2017-09-21 11:13:51 exception 'Exception' with message 'You can't send(NULL) to client, you need to convert it to a string. ' in E:\www\kundu\vendor\workerman\workerman-for-win\Protocols\Websocket.php:225
+Stack trace:
+#0 E:\www\kundu\vendor\workerman\workerman-for-win\Connection\TcpConnection.php(310): Workerman\Protocols\Websocket::encode(NULL, Object(Workerman\Connection\TcpConnection))
+#1 E:\www\kundu\app\push\controller\Check.php(29): Workerman\Connection\TcpConnection->send(NULL)
+#2 [internal function]: app\push\controller\Check->onMessage(Object(Workerman\Connection\TcpConnection), '17092114')
+#3 E:\www\kundu\vendor\workerman\workerman-for-win\Connection\TcpConnection.php(629): call_user_func(Array, Object(Workerman\Connection\TcpConnection), '17092114')
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #66)
+#5 E:\www\kundu\vendor\workerman\workerman-for-win\Events\Select.php(286): call_user_func_array(Array, Array)
+#6 E:\www\kundu\vendor\workerman\workerman-for-win\Worker.php(856): Workerman\Events\Select->loop()
+#7 E:\www\kundu\vendor\workerman\workerman-for-win\Worker.php(473): Workerman\Worker->run()
+#8 E:\www\kundu\vendor\workerman\workerman-for-win\Worker.php(382): Workerman\Worker::runAllWorkers()
+#9 E:\www\kundu\vendor\topthink\think-worker\src\Server.php(48): Workerman\Worker::runAll()
+#10 [internal function]: think\worker\Server->__construct()
+#11 E:\www\kundu\thinkphp\library\think\App.php(215): ReflectionClass->newInstanceArgs(Array)
+#12 E:\www\kundu\thinkphp\library\think\Loader.php(420): think\App::invokeClass('app\\push\\contro...')
+#13 E:\www\kundu\thinkphp\library\think\App.php(386): think\Loader::controller('check', 'controller', false, 'Error')
+#14 E:\www\kundu\thinkphp\library\think\App.php(295): think\App::module(Array, Array, NULL)
+#15 E:\www\kundu\thinkphp\library\think\App.php(123): think\App::exec(Array, Array)
+#16 E:\www\kundu\thinkphp\start.php(18): think\App::run()
+#17 E:\www\kundu\check.php(8): require('E:\\www\\kundu\\th...')
+#18 {main}
+2018-04-23 21:25:40 pid:18969 Workerman[server.php] -d 
+2018-04-23 21:25:40 pid:18969 Workerman[server.php] not run
+2018-04-23 21:25:57 pid:18971 Workerman[server.php] start in DEBUG mode
+2018-04-23 21:29:21 pid:19049 Workerman[server.php] start in DEBUG mode
+2018-04-23 21:30:04 pid:19100 Workerman[server.php] start in DEBUG mode
+2018-04-23 21:33:07 pid:19166 Workerman[server.php] start in DEBUG mode
+2018-04-23 21:35:44 pid:19239 Workerman[server.php] start in DEBUG mode
+2018-04-23 21:36:34 pid:19261 Workerman[server.php] start in DEBUG mode
+2018-04-23 21:36:44 pid:19261 Workerman[server.php] Stopping ...
+2018-04-23 21:36:44 pid:19261 Workerman[server.php] has been stopped
+2018-04-23 21:36:50 pid:19268 Workerman[server.php] start in DAEMON mode
+2018-04-23 22:08:34 pid:20092 Workerman[server.php] stop 
+2018-04-23 22:08:34 pid:20092 Workerman[server.php] is stoping ...
+2018-04-23 22:08:34 pid:19270 Workerman[server.php] Stopping ...
+2018-04-23 22:08:34 pid:19270 Workerman[server.php] has been stopped
+2018-04-23 22:08:34 pid:20092 Workerman[server.php] stop success
+2018-04-23 22:09:34 pid:20123 Workerman[server.php] start in DAEMON mode
+2018-04-23 22:52:46 pid:21240 Workerman[server.php] stop 
+2018-04-23 22:52:46 pid:21240 Workerman[server.php] is stoping ...
+2018-04-23 22:52:46 pid:20125 Workerman[server.php] Stopping ...
+2018-04-23 22:52:46 pid:20125 Workerman[server.php] has been stopped
+2018-04-23 22:52:46 pid:21240 Workerman[server.php] stop success
+2018-04-23 22:52:56 pid:21241 Workerman[server.php] start in DAEMON mode
+2018-04-24 09:53:52 pid:5737 Workerman[server.php] stop 
+2018-04-24 09:53:52 pid:5737 Workerman[server.php] is stoping ...
+2018-04-24 09:53:52 pid:21243 Workerman[server.php] Stopping ...
+2018-04-24 09:53:52 pid:21243 Workerman[server.php] has been stopped
+2018-04-24 09:53:52 pid:5737 Workerman[server.php] stop success
+2018-04-24 09:53:59 pid:5738 Workerman[server.php] stard 
+2018-04-24 09:53:59 pid:5738 Workerman[server.php] not run
+2018-04-24 09:54:06 pid:5754 Workerman[server.php] start in DAEMON mode
+2018-04-24 22:32:29 pid:24934 Workerman[server.php] stop 
+2018-04-24 22:32:29 pid:24934 Workerman[server.php] is stoping ...
+2018-04-24 22:32:29 pid:5756 Workerman[server.php] Stopping ...
+2018-04-24 22:32:29 pid:5756 Workerman[server.php] has been stopped
+2018-04-24 22:32:29 pid:24934 Workerman[server.php] stop success
+2018-04-24 22:32:37 pid:24941 Workerman[server.php] start in DEBUG mode
+2018-04-24 22:43:31 pid:24941 Workerman[server.php] Stopping ...
+2018-04-24 22:43:31 pid:24941 Workerman[server.php] has been stopped
+2018-04-24 22:43:48 pid:25234 Workerman[server.php] start in DEBUG mode
+2018-04-24 22:44:10 pid:25240 exception 'think\exception\ErrorException' with message 'Undefined property: Workerman\Connection\TcpConnection::$connections' in /home/wwwroot/default/hsyl/app/push/controller/Worker.php:19
+Stack trace:
+#0 /home/wwwroot/default/hsyl/app/push/controller/Worker.php(19): think\Error::appError(8, 'Undefined prope...', '/home/wwwroot/d...', 19, Array)
+#1 [internal function]: app\push\controller\Worker->onMessage(Object(Workerman\Connection\TcpConnection), '{"room":"5","co...')
+#2 /home/wwwroot/default/hsyl/vendor/workerman/workerman/Connection/TcpConnection.php(480): call_user_func(Array, Object(Workerman\Connection\TcpConnection), '{"room":"5","co...')
+#3 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #64)
+#4 /home/wwwroot/default/hsyl/vendor/workerman/workerman/Events/Select.php(283): call_user_func_array(Array, Array)
+#5 /home/wwwroot/default/hsyl/vendor/workerman/workerman/Worker.php(1571): Workerman\Events\Select->loop()
+#6 /home/wwwroot/default/hsyl/vendor/workerman/workerman/Worker.php(959): Workerman\Worker->run()
+#7 /home/wwwroot/default/hsyl/vendor/workerman/workerman/Worker.php(922): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /home/wwwroot/default/hsyl/vendor/workerman/workerman/Worker.php(430): Workerman\Worker::forkWorkers()
+#9 /home/wwwroot/default/hsyl/vendor/topthink/think-worker/src/Server.php(48): Workerman\Worker::runAll()
+#10 [internal function]: think\worker\Server->__construct()
+#11 /home/wwwroot/default/hsyl/thinkphp/library/think/App.php(215): ReflectionClass->newInstanceArgs(Array)
+#12 /home/wwwroot/default/hsyl/thinkphp/library/think/Loader.php(420): think\App::invokeClass('app\\push\\contro...')
+#13 /home/wwwroot/default/hsyl/thinkphp/library/think/App.php(386): think\Loader::controller('worker', 'controller', false, 'Error')
+#14 /home/wwwroot/default/hsyl/thinkphp/library/think/App.php(295): think\App::module(Array, Array, NULL)
+#15 /home/wwwroot/default/hsyl/thinkphp/library/think/App.php(123): think\App::exec(Array, Array)
+#16 /home/wwwroot/default/hsyl/thinkphp/start.php(18): think\App::run()
+#17 /home/wwwroot/default/hsyl/server.php(8): require('/home/wwwroot/d...')
+#18 {main}
+2018-04-24 22:44:10 pid:25240 Worker[25240] process terminated with exit()/die(). Please do not call exit()/die() in workerman.
+2018-04-24 22:44:10 pid:25234 worker[none:25240] exit with status 64000
+2018-04-24 23:01:19 pid:25234 Workerman[server.php] Stopping ...
+2018-04-24 23:01:19 pid:25234 Workerman[server.php] has been stopped
+2018-04-26 10:33:07 pid:15169 Workerman[server.php] start in DEBUG mode
+2018-04-26 10:39:02 pid:15169 Workerman[server.php] Stopping ...
+2018-04-26 10:39:02 pid:15169 Workerman[server.php] has been stopped
+2018-04-26 11:02:59 pid:17814 Workerman[server.php] start in DEBUG mode
+2018-04-26 11:26:02 pid:17814 Workerman[server.php] Stopping ...
+2018-04-26 11:26:02 pid:17814 Workerman[server.php] has been stopped

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>规则</title>
+    <script src="__JS__/mui.min.js"></script>
+    <link href="__CSS__/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/common.css"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/index.css"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+	<style>
+		.btn_big {
+			width: 80%;
+			margin: 10px auto;
+			text-align: center;
+			color: #fff;
+			background: #8f8f94;
+			border-radius: 30px;
+			padding: 10px 0;
+			/*background: linear-gradient(#cd4c65,#bf445c,#be435b,#b73f56);*/
+		}
+		</style>
+</head>
+<body style="width: 100%;background: url(__IMG__/bg1.png)no-repeat;background-size:100% 100% ;">
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title">个人资料</h1>
+	</header>
+	{include file="common/nav" /}
+	<div class="mui-content ">
+		<ul class="mui-table-view">
+			<li class="mui-table-view-cell">
+				<span class="mui-pull-left"> 昵称</span>
+				<span class="mui-pull-right">
+						<input type="text"  id="nickname" value="{$data.nickname}" style="margin: 0;height: 30px;padding: 0;text-align: right;border: none;"/>
+					</span>
+				<input type="hidden" id='old_nickname' value="{$data.nickname}">
+			</li>
+			<li class="mui-table-view-cell" id="my_head">
+				<span class="mui-pull-left"> 修改头像</span>
+				<span class="mui-pull-right poto_img"><img id="change_head" style="height: 50px; border-radius: 50%" src="{$data.head|default='__IMG__/user.png'}"/></span>
+
+			</li>
+		</ul>
+		<p class="mg_top20 mui-text-center mg_b20" ><a href="javascript:void(0)" style="color: white" id="doNickname" class="btn_big ">保存（昵称）</a></p>
+	</div>
+	<div class="file_head">
+		<input type="file" name="" id="zp" capture="camera" value=""  hidden="hidden"/>
+	</div>
+	<script type="text/javascript">
+	</script>
+	<script src="__JS__/layer_mobile/layer.js" ></script>
+	<script src="__JS__/rooms.js" ></script>
+	<script src="__JS__/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="__JSA__/Plupload/plupload.full.min.js"></script>
+	<script type="text/javascript">
+        $(function(){
+            $("body").css("height",$(document).height());
+            $("#index_icon").css("width",$("#index_icon").height());
+        })
+	</script>
+	<script type="text/javascript">
+        var ids = new Array("my_head");
+        $.each(ids,function(i,n){
+            var self = this.toString();
+            var uploader_avatar = new plupload.Uploader({
+                runtimes: 'gears,html5,html4,silverlight,flash', //上传插件初始化选用那种方式的优先级顺序
+                browse_button: self, // 上传按钮
+                url: "{:url('upload_head')}", //远程上传地址
+                flash_swf_url: '__DTSC__/Moxie.swf',//flash文件地址
+                silverlight_xap_url: '__DTSC__/Moxie.xap', //silverlight文件地址
+                filters: {
+                    max_file_size: '100mb', //最大上传文件大小（格式100b, 10kb, 10mb, 1gb）
+                    mime_types: [//允许文件上传类型
+                        {title: "files", extensions: "jpg,png,gif,jpeg"}
+                    ]
+                },
+                multi_selection: false, //true:ctrl多文件上传, false 单文件上传
+                init: {
+                    FilesAdded: function(up, files) { //文件上传前
+                        uploader_avatar.start();
+                    },
+                    UploadProgress: function(up, file) { //上传中，显示进度条
+
+                    },
+                    FileUploaded: function(up, file, info) { //文件上传成功的时候触发
+                        var data = eval("(" + info.response + ")");//解析返回的json数据
+                        var pic  = data.pic;
+                        if(data.status == 1){
+                            $('#change_head').attr('src',pic);
+                            my_error("修改成功");
+                        }else{
+                            my_error("修改失败");
+                        }
+                    },
+                    Error: function(up, err) { //上传出错的时候触发
+                        alert(err.message);
+                    }
+                }
+            });
+            uploader_avatar.init();
+
+        });
+
+	</script>
+	<script>
+        $('#doNickname').click(function(){
+            var nickname      =   $('#nickname').val();
+            var old_nickname  =   $('#old_nickname').val();
+            if(nickname == '' || nickname == null){
+                my_error('昵称不能为空');
+                return false;
+            }
+            if(nickname==old_nickname){
+                my_error('修改昵称不能与原昵称相同');
+                return false;
+            }
+            $.ajax({
+                type: "post",
+                url: "{:url('mine/do_nickname')}",
+                data: {
+                    "nickname": nickname
+                },
+                dataType: "__JS__on",
+                async: false,
+                success: function(data) {
+                    var ret  = data.ret;
+                    var info = data.msg;
+                    if(ret=='200'){
+                        my_error(info);
+                    }else {
+                        my_error(info);
+                    }
+                }
+            });
+
+        });
+	</script>
+</body>
+</html>

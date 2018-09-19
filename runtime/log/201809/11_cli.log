@@ -1,0 +1,431 @@
+[ 2018-09-11T10:02:32+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:02:32+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001073s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:02:32+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_robot` [ RunTime:0.000663s ]
+[ 2018-09-11T10:02:32+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_robot` WHERE  `status` = 1 [ RunTime:0.000217s ]
+[ 2018-09-11T10:02:32+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_robot_way` [ RunTime:0.000458s ]
+[ 2018-09-11T10:02:32+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_robot_way` [ RunTime:0.000150s ]
+[ 2018-09-11T10:02:32+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:02:32+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_setting` [ RunTime:0.000525s ]
+[ 2018-09-11T10:02:32+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000158s ]
+[ 2018-09-11T10:02:32+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000190s ]
+[ 2018-09-11T10:02:33+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:02:33+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001185s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:02:33+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_at_ssc` [ RunTime:0.000690s ]
+[ 2018-09-11T10:02:33+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_at_ssc` WHERE  `stage` = '20180911024' LIMIT 1 [ RunTime:0.000219s ]
+[ 2018-09-11T10:02:33+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:02:39+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:02:39+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001212s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:02:39+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_at_ssc` [ RunTime:0.000707s ]
+[ 2018-09-11T10:02:39+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_at_ssc` WHERE  `stage` = '20180911024' LIMIT 1 [ RunTime:0.000209s ]
+[ 2018-09-11T10:02:39+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:02:42+08:00 ][ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:02:42+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-09-11T10:02:42+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001226s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:02:42+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_single` [ RunTime:0.000757s ]
+[ 2018-09-11T10:02:42+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_single` WHERE  `stage` = '20180911024'  AND `cate` = 5  AND `state` = 0  AND `code` = 0  AND `is_c` = 0 LIMIT 1000 [ RunTime:0.000290s ]
+[ 2018-09-11T10:02:42+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:02:42+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001237s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:02:42+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_robot` [ RunTime:0.000699s ]
+[ 2018-09-11T10:02:42+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_robot` WHERE  `status` = 1 [ RunTime:0.000261s ]
+[ 2018-09-11T10:02:42+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_robot_way` [ RunTime:0.000484s ]
+[ 2018-09-11T10:02:42+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_robot_way` [ RunTime:0.000161s ]
+[ 2018-09-11T10:02:42+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:02:45+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:02:45+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001166s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:02:45+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_at_ssc` [ RunTime:0.000678s ]
+[ 2018-09-11T10:02:45+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_at_ssc` WHERE  `stage` = '20180911024' LIMIT 1 [ RunTime:0.000200s ]
+[ 2018-09-11T10:02:45+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:02:47+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:02:47+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001192s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:02:47+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_detail` [ RunTime:0.000743s ]
+[ 2018-09-11T10:02:47+08:00 ][ sql ] [ SQL ] SELECT `m`.`nickname`,`d`.`exp`,`d`.`money`,`d`.`balance`,`d`.`id` FROM `dl_detail` `d` INNER JOIN `dl_member` `m` ON `m`.`id`=`d`.`uid` WHERE  `d`.`is_read` = 0  AND `d`.`exp` IN (1,6) [ RunTime:0.000238s ]
+[ 2018-09-11T10:02:51+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:02:51+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.000998s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:02:51+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_at_ssc` [ RunTime:0.000571s ]
+[ 2018-09-11T10:02:51+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_at_ssc` WHERE  `stage` = '20180911024' LIMIT 1 [ RunTime:0.000176s ]
+[ 2018-09-11T10:02:51+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:02:52+08:00 ][ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:02:52+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-09-11T10:02:52+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001175s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:02:52+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_single` [ RunTime:0.000743s ]
+[ 2018-09-11T10:02:52+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_single` WHERE  `stage` = '20180911024'  AND `cate` = 5  AND `state` = 0  AND `code` = 0  AND `is_c` = 0 LIMIT 1000 [ RunTime:0.000289s ]
+[ 2018-09-11T10:02:52+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:02:52+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001187s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:02:52+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_robot` [ RunTime:0.000670s ]
+[ 2018-09-11T10:02:52+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_robot` WHERE  `status` = 1 [ RunTime:0.000237s ]
+[ 2018-09-11T10:02:52+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_robot_way` [ RunTime:0.000496s ]
+[ 2018-09-11T10:02:52+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_robot_way` [ RunTime:0.000158s ]
+[ 2018-09-11T10:02:52+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:02:57+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:02:57+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001274s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:02:57+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_at_ssc` [ RunTime:0.000669s ]
+[ 2018-09-11T10:02:57+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_at_ssc` WHERE  `stage` = '20180911024' LIMIT 1 [ RunTime:0.000200s ]
+[ 2018-09-11T10:02:57+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:03:01+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:03:01+08:00 ][ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:03:01+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-09-11T10:03:01+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:03:02+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.002703s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:03:02+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_single` [ RunTime:0.000756s ]
+[ 2018-09-11T10:03:02+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_single` WHERE  `stage` = '20180911024'  AND `cate` = 5  AND `state` = 0  AND `code` = 0  AND `is_c` = 0 LIMIT 1000 [ RunTime:0.000272s ]
+[ 2018-09-11T10:03:02+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.006779s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:03:02+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_robot` [ RunTime:0.000554s ]
+[ 2018-09-11T10:03:02+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_robot` WHERE  `status` = 1 [ RunTime:0.000193s ]
+[ 2018-09-11T10:03:02+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_robot_way` [ RunTime:0.000443s ]
+[ 2018-09-11T10:03:02+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_robot_way` [ RunTime:0.000145s ]
+[ 2018-09-11T10:03:02+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:03:02+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.011235s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:03:02+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_detail` [ RunTime:0.000592s ]
+[ 2018-09-11T10:03:02+08:00 ][ sql ] [ SQL ] SELECT `m`.`nickname`,`d`.`exp`,`d`.`money`,`d`.`balance`,`d`.`id` FROM `dl_detail` `d` INNER JOIN `dl_member` `m` ON `m`.`id`=`d`.`uid` WHERE  `d`.`is_read` = 0  AND `d`.`exp` IN (1,6) [ RunTime:0.000188s ]
+[ 2018-09-11T10:03:02+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_setting` [ RunTime:0.000608s ]
+[ 2018-09-11T10:03:02+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000189s ]
+[ 2018-09-11T10:03:02+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:03:02+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.004149s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:03:02+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_at_ssc` [ RunTime:0.000651s ]
+[ 2018-09-11T10:03:02+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_at_ssc` WHERE  `stage` = '20180911024' LIMIT 1 [ RunTime:0.000206s ]
+[ 2018-09-11T10:03:02+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:03:02+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000200s ]
+[ 2018-09-11T10:03:02+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:03:02+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001014s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:03:02+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_detail` [ RunTime:0.000727s ]
+[ 2018-09-11T10:03:02+08:00 ][ sql ] [ SQL ] SELECT `m`.`nickname`,`d`.`exp`,`d`.`money`,`d`.`balance`,`d`.`id` FROM `dl_detail` `d` INNER JOIN `dl_member` `m` ON `m`.`id`=`d`.`uid` WHERE  `d`.`is_read` = 0  AND `d`.`exp` IN (1,6) [ RunTime:0.000215s ]
+[ 2018-09-11T10:03:02+08:00 ][ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:03:02+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-09-11T10:03:02+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.000991s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:03:02+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_single` [ RunTime:0.000708s ]
+[ 2018-09-11T10:03:02+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_single` WHERE  `stage` = '20180911024'  AND `cate` = 5  AND `state` = 0  AND `code` = 0  AND `is_c` = 0 LIMIT 1000 [ RunTime:0.000290s ]
+[ 2018-09-11T10:03:02+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:03:02+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001022s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:03:02+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_robot` [ RunTime:0.000672s ]
+[ 2018-09-11T10:03:02+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_robot` WHERE  `status` = 1 [ RunTime:0.000242s ]
+[ 2018-09-11T10:03:02+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_robot_way` [ RunTime:0.000449s ]
+[ 2018-09-11T10:03:02+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_robot_way` [ RunTime:0.000164s ]
+[ 2018-09-11T10:03:02+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:03:02+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_setting` [ RunTime:0.000549s ]
+[ 2018-09-11T10:03:02+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000171s ]
+[ 2018-09-11T10:03:02+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000236s ]
+[ 2018-09-11T10:03:03+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:03:03+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001236s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:03:03+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_at_ssc` [ RunTime:0.000681s ]
+[ 2018-09-11T10:03:03+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_at_ssc` WHERE  `stage` = '20180911024' LIMIT 1 [ RunTime:0.000222s ]
+[ 2018-09-11T10:03:03+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:03:08+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:03:08+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001237s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:03:08+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_at_ssc` [ RunTime:0.000650s ]
+[ 2018-09-11T10:03:08+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_at_ssc` WHERE  `stage` = '20180911024' LIMIT 1 [ RunTime:0.000210s ]
+[ 2018-09-11T10:03:08+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:03:12+08:00 ][ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:03:12+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-09-11T10:03:12+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001140s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:03:12+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_single` [ RunTime:0.000732s ]
+[ 2018-09-11T10:03:12+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_single` WHERE  `stage` = '20180911024'  AND `cate` = 5  AND `state` = 0  AND `code` = 0  AND `is_c` = 0 LIMIT 1000 [ RunTime:0.000279s ]
+[ 2018-09-11T10:03:12+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:03:12+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001020s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:03:12+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_robot` [ RunTime:0.000594s ]
+[ 2018-09-11T10:03:12+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_robot` WHERE  `status` = 1 [ RunTime:0.000235s ]
+[ 2018-09-11T10:03:12+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_robot_way` [ RunTime:0.000460s ]
+[ 2018-09-11T10:03:12+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_robot_way` [ RunTime:0.000169s ]
+[ 2018-09-11T10:03:12+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:03:12+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_setting` [ RunTime:0.000510s ]
+[ 2018-09-11T10:03:12+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000176s ]
+[ 2018-09-11T10:03:12+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000206s ]
+[ 2018-09-11T10:03:14+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:03:14+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001266s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:03:14+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_at_ssc` [ RunTime:0.000696s ]
+[ 2018-09-11T10:03:14+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_at_ssc` WHERE  `stage` = '20180911024' LIMIT 1 [ RunTime:0.000199s ]
+[ 2018-09-11T10:03:14+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:03:17+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:03:17+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001117s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:03:17+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_detail` [ RunTime:0.000695s ]
+[ 2018-09-11T10:03:17+08:00 ][ sql ] [ SQL ] SELECT `m`.`nickname`,`d`.`exp`,`d`.`money`,`d`.`balance`,`d`.`id` FROM `dl_detail` `d` INNER JOIN `dl_member` `m` ON `m`.`id`=`d`.`uid` WHERE  `d`.`is_read` = 0  AND `d`.`exp` IN (1,6) [ RunTime:0.000209s ]
+[ 2018-09-11T10:03:20+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:03:20+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001214s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:03:20+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_at_ssc` [ RunTime:0.000658s ]
+[ 2018-09-11T10:03:20+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_at_ssc` WHERE  `stage` = '20180911024' LIMIT 1 [ RunTime:0.000219s ]
+[ 2018-09-11T10:03:20+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:03:22+08:00 ][ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:03:22+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-09-11T10:03:22+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001199s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:03:22+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_single` [ RunTime:0.000770s ]
+[ 2018-09-11T10:03:22+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_single` WHERE  `stage` = '20180911024'  AND `cate` = 5  AND `state` = 0  AND `code` = 0  AND `is_c` = 0 LIMIT 1000 [ RunTime:0.000291s ]
+[ 2018-09-11T10:03:22+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:03:22+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001236s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:03:22+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_robot` [ RunTime:0.000678s ]
+[ 2018-09-11T10:03:22+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_robot` WHERE  `status` = 1 [ RunTime:0.000256s ]
+[ 2018-09-11T10:03:22+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_robot_way` [ RunTime:0.000482s ]
+[ 2018-09-11T10:03:22+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_robot_way` [ RunTime:0.000160s ]
+[ 2018-09-11T10:03:22+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:03:22+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_setting` [ RunTime:0.000701s ]
+[ 2018-09-11T10:03:22+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000206s ]
+[ 2018-09-11T10:03:22+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000264s ]
+[ 2018-09-11T10:03:26+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:03:26+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001170s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:03:26+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_at_ssc` [ RunTime:0.000654s ]
+[ 2018-09-11T10:03:26+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_at_ssc` WHERE  `stage` = '20180911024' LIMIT 1 [ RunTime:0.000201s ]
+[ 2018-09-11T10:03:26+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:03:32+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:03:32+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001211s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:03:32+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_detail` [ RunTime:0.000679s ]
+[ 2018-09-11T10:03:32+08:00 ][ sql ] [ SQL ] SELECT `m`.`nickname`,`d`.`exp`,`d`.`money`,`d`.`balance`,`d`.`id` FROM `dl_detail` `d` INNER JOIN `dl_member` `m` ON `m`.`id`=`d`.`uid` WHERE  `d`.`is_read` = 0  AND `d`.`exp` IN (1,6) [ RunTime:0.000200s ]
+[ 2018-09-11T10:03:32+08:00 ][ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:03:32+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-09-11T10:03:32+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001323s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:03:32+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_single` [ RunTime:0.000757s ]
+[ 2018-09-11T10:03:32+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_single` WHERE  `stage` = '20180911024'  AND `cate` = 5  AND `state` = 0  AND `code` = 0  AND `is_c` = 0 LIMIT 1000 [ RunTime:0.000272s ]
+[ 2018-09-11T10:03:32+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:03:32+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001250s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:03:32+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_robot` [ RunTime:0.000651s ]
+[ 2018-09-11T10:03:32+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_robot` WHERE  `status` = 1 [ RunTime:0.000217s ]
+[ 2018-09-11T10:03:32+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_robot_way` [ RunTime:0.000513s ]
+[ 2018-09-11T10:03:32+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_robot_way` [ RunTime:0.000145s ]
+[ 2018-09-11T10:03:32+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:03:32+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_setting` [ RunTime:0.000639s ]
+[ 2018-09-11T10:03:32+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000186s ]
+[ 2018-09-11T10:03:32+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000238s ]
+[ 2018-09-11T10:03:32+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:03:32+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001325s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:03:32+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_at_ssc` [ RunTime:0.000726s ]
+[ 2018-09-11T10:03:32+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_at_ssc` WHERE  `stage` = '20180911024' LIMIT 1 [ RunTime:0.000214s ]
+[ 2018-09-11T10:03:32+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:03:38+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:03:38+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001211s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:03:38+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_at_ssc` [ RunTime:0.000671s ]
+[ 2018-09-11T10:03:38+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_at_ssc` WHERE  `stage` = '20180911024' LIMIT 1 [ RunTime:0.000198s ]
+[ 2018-09-11T10:03:38+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:03:42+08:00 ][ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:03:42+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-09-11T10:03:42+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001181s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:03:42+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_single` [ RunTime:0.000757s ]
+[ 2018-09-11T10:03:42+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_single` WHERE  `stage` = '20180911024'  AND `cate` = 5  AND `state` = 0  AND `code` = 0  AND `is_c` = 0 LIMIT 1000 [ RunTime:0.000293s ]
+[ 2018-09-11T10:03:42+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:03:42+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001216s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:03:42+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_robot` [ RunTime:0.000656s ]
+[ 2018-09-11T10:03:42+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_robot` WHERE  `status` = 1 [ RunTime:0.000227s ]
+[ 2018-09-11T10:03:42+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_robot_way` [ RunTime:0.000476s ]
+[ 2018-09-11T10:03:42+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_robot_way` [ RunTime:0.000152s ]
+[ 2018-09-11T10:03:42+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:03:42+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_setting` [ RunTime:0.000591s ]
+[ 2018-09-11T10:03:42+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000171s ]
+[ 2018-09-11T10:03:42+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000241s ]
+[ 2018-09-11T10:03:45+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:03:45+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001138s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:03:45+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_at_ssc` [ RunTime:0.000698s ]
+[ 2018-09-11T10:03:45+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_at_ssc` WHERE  `stage` = '20180911024' LIMIT 1 [ RunTime:0.000214s ]
+[ 2018-09-11T10:03:45+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:03:47+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:03:47+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001114s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:03:47+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_detail` [ RunTime:0.000698s ]
+[ 2018-09-11T10:03:47+08:00 ][ sql ] [ SQL ] SELECT `m`.`nickname`,`d`.`exp`,`d`.`money`,`d`.`balance`,`d`.`id` FROM `dl_detail` `d` INNER JOIN `dl_member` `m` ON `m`.`id`=`d`.`uid` WHERE  `d`.`is_read` = 0  AND `d`.`exp` IN (1,6) [ RunTime:0.000218s ]
+[ 2018-09-11T10:03:51+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:03:51+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001207s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:03:51+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_at_ssc` [ RunTime:0.000725s ]
+[ 2018-09-11T10:03:51+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_at_ssc` WHERE  `stage` = '20180911024' LIMIT 1 [ RunTime:0.000222s ]
+[ 2018-09-11T10:03:51+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:03:52+08:00 ][ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:03:52+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-09-11T10:03:52+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001186s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:03:52+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_single` [ RunTime:0.000712s ]
+[ 2018-09-11T10:03:52+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_single` WHERE  `stage` = '20180911024'  AND `cate` = 5  AND `state` = 0  AND `code` = 0  AND `is_c` = 0 LIMIT 1000 [ RunTime:0.000264s ]
+[ 2018-09-11T10:03:52+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:03:52+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001239s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:03:52+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_robot` [ RunTime:0.000674s ]
+[ 2018-09-11T10:03:52+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_robot` WHERE  `status` = 1 [ RunTime:0.000224s ]
+[ 2018-09-11T10:03:52+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_robot_way` [ RunTime:0.000513s ]
+[ 2018-09-11T10:03:52+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_robot_way` [ RunTime:0.000172s ]
+[ 2018-09-11T10:03:52+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:03:52+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_setting` [ RunTime:0.000597s ]
+[ 2018-09-11T10:03:52+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000171s ]
+[ 2018-09-11T10:03:52+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000238s ]
+[ 2018-09-11T10:03:57+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:03:57+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001330s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:03:57+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_at_ssc` [ RunTime:0.000654s ]
+[ 2018-09-11T10:03:57+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_at_ssc` WHERE  `stage` = '20180911024' LIMIT 1 [ RunTime:0.000200s ]
+[ 2018-09-11T10:03:57+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:04:01+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:04:01+08:00 ][ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:04:01+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-09-11T10:04:01+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:04:01+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.004012s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:04:01+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_detail` [ RunTime:0.000707s ]
+[ 2018-09-11T10:04:01+08:00 ][ sql ] [ SQL ] SELECT `m`.`nickname`,`d`.`exp`,`d`.`money`,`d`.`balance`,`d`.`id` FROM `dl_detail` `d` INNER JOIN `dl_member` `m` ON `m`.`id`=`d`.`uid` WHERE  `d`.`is_read` = 0  AND `d`.`exp` IN (1,6) [ RunTime:0.000199s ]
+[ 2018-09-11T10:04:01+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.005891s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:04:01+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_robot` [ RunTime:0.000499s ]
+[ 2018-09-11T10:04:01+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_robot` WHERE  `status` = 1 [ RunTime:0.000201s ]
+[ 2018-09-11T10:04:01+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_robot_way` [ RunTime:0.000433s ]
+[ 2018-09-11T10:04:01+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.010262s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:04:01+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_single` [ RunTime:0.000582s ]
+[ 2018-09-11T10:04:01+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_single` WHERE  `stage` = '20180911024'  AND `cate` = 5  AND `state` = 0  AND `code` = 0  AND `is_c` = 0 LIMIT 1000 [ RunTime:0.000242s ]
+[ 2018-09-11T10:04:01+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_robot_way` [ RunTime:0.000174s ]
+[ 2018-09-11T10:04:01+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:04:01+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:04:01+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.000876s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:04:01+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_at_ssc` [ RunTime:0.000567s ]
+[ 2018-09-11T10:04:01+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_at_ssc` WHERE  `stage` = '20180911024' LIMIT 1 [ RunTime:0.000185s ]
+[ 2018-09-11T10:04:01+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:04:02+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:04:02+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001203s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:04:02+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_detail` [ RunTime:0.000707s ]
+[ 2018-09-11T10:04:02+08:00 ][ sql ] [ SQL ] SELECT `m`.`nickname`,`d`.`exp`,`d`.`money`,`d`.`balance`,`d`.`id` FROM `dl_detail` `d` INNER JOIN `dl_member` `m` ON `m`.`id`=`d`.`uid` WHERE  `d`.`is_read` = 0  AND `d`.`exp` IN (1,6) [ RunTime:0.000203s ]
+[ 2018-09-11T10:04:02+08:00 ][ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:04:02+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-09-11T10:04:02+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001008s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:04:02+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_single` [ RunTime:0.000659s ]
+[ 2018-09-11T10:04:02+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_single` WHERE  `stage` = '20180911024'  AND `cate` = 5  AND `state` = 0  AND `code` = 0  AND `is_c` = 0 LIMIT 1000 [ RunTime:0.000260s ]
+[ 2018-09-11T10:04:02+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:04:02+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001170s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:04:02+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_robot` [ RunTime:0.000646s ]
+[ 2018-09-11T10:04:02+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_robot` WHERE  `status` = 1 [ RunTime:0.000230s ]
+[ 2018-09-11T10:04:02+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_robot_way` [ RunTime:0.000438s ]
+[ 2018-09-11T10:04:02+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_robot_way` [ RunTime:0.000147s ]
+[ 2018-09-11T10:04:02+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:04:02+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_setting` [ RunTime:0.000674s ]
+[ 2018-09-11T10:04:02+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000174s ]
+[ 2018-09-11T10:04:02+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000231s ]
+[ 2018-09-11T10:04:03+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:04:03+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.004224s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:04:03+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_at_ssc` [ RunTime:0.000672s ]
+[ 2018-09-11T10:04:03+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_at_ssc` WHERE  `stage` = '20180911024' LIMIT 1 [ RunTime:0.000194s ]
+[ 2018-09-11T10:04:03+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:04:07+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:04:07+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001298s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:04:07+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_at_ssc` [ RunTime:0.000704s ]
+[ 2018-09-11T10:04:07+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_at_ssc` WHERE  `stage` = '20180911024' LIMIT 1 [ RunTime:0.000238s ]
+[ 2018-09-11T10:04:07+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:04:11+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:04:11+08:00 ][ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:04:11+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-09-11T10:04:11+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.004116s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:04:11+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_single` [ RunTime:0.000755s ]
+[ 2018-09-11T10:04:11+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_single` WHERE  `stage` = '20180911024'  AND `cate` = 5  AND `state` = 0  AND `code` = 0  AND `is_c` = 0 LIMIT 1000 [ RunTime:0.000268s ]
+[ 2018-09-11T10:04:11+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.006933s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:04:11+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_robot` [ RunTime:0.000539s ]
+[ 2018-09-11T10:04:11+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_robot` WHERE  `status` = 1 [ RunTime:0.000201s ]
+[ 2018-09-11T10:04:11+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_robot_way` [ RunTime:0.000475s ]
+[ 2018-09-11T10:04:11+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_robot_way` [ RunTime:0.000151s ]
+[ 2018-09-11T10:04:11+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:04:13+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:04:14+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001270s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:04:14+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_at_ssc` [ RunTime:0.000658s ]
+[ 2018-09-11T10:04:14+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_at_ssc` WHERE  `stage` = '20180911024' LIMIT 1 [ RunTime:0.000199s ]
+[ 2018-09-11T10:04:14+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:04:16+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:04:16+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001103s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:04:16+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_detail` [ RunTime:0.000677s ]
+[ 2018-09-11T10:04:16+08:00 ][ sql ] [ SQL ] SELECT `m`.`nickname`,`d`.`exp`,`d`.`money`,`d`.`balance`,`d`.`id` FROM `dl_detail` `d` INNER JOIN `dl_member` `m` ON `m`.`id`=`d`.`uid` WHERE  `d`.`is_read` = 0  AND `d`.`exp` IN (1,6) [ RunTime:0.000205s ]
+[ 2018-09-11T10:04:20+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:04:20+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001060s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:04:20+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_at_ssc` [ RunTime:0.000661s ]
+[ 2018-09-11T10:04:20+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_at_ssc` WHERE  `stage` = '20180911024' LIMIT 1 [ RunTime:0.000221s ]
+[ 2018-09-11T10:04:20+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:04:21+08:00 ][ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:04:21+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-09-11T10:04:21+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:04:21+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.003078s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:04:21+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_single` [ RunTime:0.000979s ]
+[ 2018-09-11T10:04:21+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_single` WHERE  `stage` = '20180911024'  AND `cate` = 5  AND `state` = 0  AND `code` = 0  AND `is_c` = 0 LIMIT 1000 [ RunTime:0.000378s ]
+[ 2018-09-11T10:04:21+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.007593s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:04:21+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_robot` [ RunTime:0.000682s ]
+[ 2018-09-11T10:04:21+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_robot` WHERE  `status` = 1 [ RunTime:0.000262s ]
+[ 2018-09-11T10:04:21+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_robot_way` [ RunTime:0.000566s ]
+[ 2018-09-11T10:04:21+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_robot_way` [ RunTime:0.000175s ]
+[ 2018-09-11T10:04:21+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:04:21+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_setting` [ RunTime:0.000583s ]
+[ 2018-09-11T10:04:21+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000176s ]
+[ 2018-09-11T10:04:21+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000206s ]
+[ 2018-09-11T10:04:26+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:04:26+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.005951s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:04:26+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_at_ssc` [ RunTime:0.000673s ]
+[ 2018-09-11T10:04:26+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_at_ssc` WHERE  `stage` = '20180911024' LIMIT 1 [ RunTime:0.000207s ]
+[ 2018-09-11T10:04:26+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:04:31+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:04:31+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001755s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:04:31+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_detail` [ RunTime:0.000718s ]
+[ 2018-09-11T10:04:31+08:00 ][ sql ] [ SQL ] SELECT `m`.`nickname`,`d`.`exp`,`d`.`money`,`d`.`balance`,`d`.`id` FROM `dl_detail` `d` INNER JOIN `dl_member` `m` ON `m`.`id`=`d`.`uid` WHERE  `d`.`is_read` = 0  AND `d`.`exp` IN (1,6) [ RunTime:0.000209s ]
+[ 2018-09-11T10:04:31+08:00 ][ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:04:31+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-09-11T10:04:31+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001211s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:04:31+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_single` [ RunTime:0.000762s ]
+[ 2018-09-11T10:04:31+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_single` WHERE  `stage` = '20180911024'  AND `cate` = 5  AND `state` = 0  AND `code` = 0  AND `is_c` = 0 LIMIT 1000 [ RunTime:0.000291s ]
+[ 2018-09-11T10:04:32+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:04:32+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001178s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:04:32+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_robot` [ RunTime:0.000702s ]
+[ 2018-09-11T10:04:32+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_robot` WHERE  `status` = 1 [ RunTime:0.001420s ]
+[ 2018-09-11T10:04:32+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_robot_way` [ RunTime:0.001318s ]
+[ 2018-09-11T10:04:32+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_robot_way` [ RunTime:0.000163s ]
+[ 2018-09-11T10:04:32+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:04:32+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_setting` [ RunTime:0.000685s ]
+[ 2018-09-11T10:04:32+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000186s ]
+[ 2018-09-11T10:04:32+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000256s ]
+[ 2018-09-11T10:04:32+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:04:32+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001251s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:04:32+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_at_ssc` [ RunTime:0.000721s ]
+[ 2018-09-11T10:04:32+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_at_ssc` WHERE  `stage` = '20180911024' LIMIT 1 [ RunTime:0.001573s ]
+[ 2018-09-11T10:04:32+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-09-11T10:04:38+08:00 ][ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ 2018-09-11T10:04:38+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.001193s ] mysql:dbname=dwj;host=127.0.0.1;port=3306;charset=utf8
+[ 2018-09-11T10:04:38+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `dl_at_ssc` [ RunTime:0.002682s ]
+[ 2018-09-11T10:04:38+08:00 ][ sql ] [ SQL ] SELECT * FROM `dl_at_ssc` WHERE  `stage` = '20180911024' LIMIT 1 [ RunTime:0.000231s ]
+[ 2018-09-11T10:04:38+08:00 ][ info ] [ CACHE ] INIT File

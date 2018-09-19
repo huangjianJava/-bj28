@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>修改资金密码</title>
+    <script src="__JS__/mui.min.js"></script>
+    <link href="__CSS__/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/common.css"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/index.css"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+</head>
+<body style="width: 100%;background: url(__IMG__/bg1.png)no-repeat;background-size:100% 100% ;">
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title">修改资金密码</h1>
+	</header>
+	<div class="mui-content">
+		<ul class="mui-table-view bgtop">
+			<li class="mui-table-view-cell mui-media">
+				<img class="mui-media-object mui-pull-left" src="{$member_info.head|default='__IMG__/user.png'}">
+				<div class="mui-media-body clearfix">
+					<div class="left" >
+						<p class="color_ff">账户：{$member_info.mobile}</p>
+						<p class="color_ff">昵称：{$member_info.nickname}</p>
+						<p class="color_ff">余额：{$member_info.money}</p>
+					</div>
+
+				</div>
+			</li>
+		</ul>
+	    <form action="" method="post" class="form_box">
+	    	<p><input type="password" name="" id="funds_pass" value="" placeholder="请修改原资金密码"/></p>
+	    	<p><input type="password" name="" id="funds_pass_one" value="" placeholder="请输入新资金密码"/></p>
+	    	<p><input type="password" name="" id="funds_pass_two" value="" placeholder="请确认资金密码"/></p>
+	    	<p><input style="width: 100%;background: #E6C59A; color: #555;margin-top: 30px;" type="button" name="" id="ali_tj" value="确定" placeholder=""/></p>
+	    </form>
+	</div>
+	<div class="overlay"></div>
+	<script src="__JS__/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="__JS__/index.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("body").css("height",$(document).height());
+			$("#index_icon").css("width",$("#index_icon").height());
+			
+		})
+	</script>
+	<script src="__JS__/layer_mobile/layer.js" ></script>
+	<script src="__JS__/rooms.js" ></script>
+	<script>
+        $('#ali_tj').click(function () {
+            var funds_pass     = $('#funds_pass').val();
+            var funds_pass_one = $('#funds_pass_one').val();
+            var funds_pass_two = $('#funds_pass_two').val();
+            if(funds_pass==""){
+                my_error('请填写原密码');
+                return false;
+            }
+            if(funds_pass_one==""){
+                my_error('请填写新密码');
+                return false;
+            }
+            if(funds_pass_two==""){
+                my_error('请填写新密码');
+                return false;
+            }
+            if(funds_pass_one!=funds_pass_two){
+                my_error('两次密码不一致');
+                return false;
+            }
+            $.ajax({
+                type: "post",
+                url: "{:url('mine/set_funds_pass')}",
+                data: {
+                    'funds_pass': funds_pass,
+                    'funds_pass_one': funds_pass_one
+                },
+                dataType: "__JS__on",
+                async: false,
+                success: function(data) {
+                    var ret = data.ret;
+                    var msg = data.msg;
+                    if(ret=='200'){
+                        my_error(msg);
+                    }else{
+                        my_error(msg);
+                    }
+                }
+            });
+        })
+
+	</script>
+</body>
+</html>

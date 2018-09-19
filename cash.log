@@ -1,0 +1,120 @@
+
+
+                                 
+  [InvalidArgumentException]     
+  Command "ssc" is not defined.  
+                                 
+
+
+
+
+                                 
+  [InvalidArgumentException]     
+  Command "ssc" is not defined.  
+                                 
+
+
+
+
+                                 
+  [InvalidArgumentException]     
+  Command "ssc" is not defined.  
+                                 
+
+
+
+
+                                 
+  [InvalidArgumentException]     
+  Command "ssc" is not defined.  
+                                 
+
+
+
+
+                                 
+  [InvalidArgumentException]     
+  Command "ssc" is not defined.  
+                                 
+
+
+
+
+                                 
+  [InvalidArgumentException]     
+  Command "ssc" is not defined.  
+                                 
+
+
+
+
+                                 
+  [InvalidArgumentException]     
+  Command "ssc" is not defined.  
+                                 
+
+
+
+
+                                 
+  [InvalidArgumentException]     
+  Command "ssc" is not defined.  
+                                 
+
+
+
+
+                                 
+  [InvalidArgumentException]     
+  Command "ssc" is not defined.  
+                                 
+
+
+
+
+                                 
+  [InvalidArgumentException]     
+  Command "ssc" is not defined.  
+                                 
+
+
+
+
+                                 
+  [InvalidArgumentException]     
+  Command "ssc" is not defined.  
+                                 
+
+
+
+
+                                 
+  [InvalidArgumentException]     
+  Command "ssc" is not defined.  
+                                 
+
+
+
+
+                                                                                         
+  [PDOException]                                                                         
+  SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)  
+                                                                                         
+
+
+
+
+                                                                                                                                                 
+  [think\exception\ErrorException]                                                                                                               
+  rename(/home/wwwroot/dwj/runtime/log/201807/02_cli.log,/home/wwwroot/dwj/runtime/log/201807/1530496472-02_cli.log): No such file or directory  
+                                                                                                                                                 
+
+
+
+
+                                                                                                                                                 
+  [think\exception\ErrorException]                                                                                                               
+  rename(/home/wwwroot/dwj/runtime/log/201807/11_cli.log,/home/wwwroot/dwj/runtime/log/201807/1531274092-11_cli.log): No such file or directory  
+                                                                                                                                                 
+
+

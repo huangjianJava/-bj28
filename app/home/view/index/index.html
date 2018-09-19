@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta name = "format-detection" content = "telephone=no">
+	<title>天猫国际</title>
+	<link rel="stylesheet" href="__CSS__/swiper.min.css"/>
+	<link rel="stylesheet" href="__CSS__/css.css"/>
+	<script src="__JS__/jquery-2.1.0.js"></script>
+	<script src="__JS__/swiper.min.js"></script>
+	<script src="__JS__/js.js"></script>
+</head>
+<body>
+<div class="tanc">
+	<div class="cc">
+		<a class="clos" onclick="tanc()">
+			<img src="__IMG__/close.png"/>
+		</a>
+		<h1>
+			<img src="__IMG__/1.jpg"/>
+			<p>
+				<span>天猫国际客服</span>
+				<!--<span>-->
+						<!--<b>上海 金山</b>-->
+				<!--</span>-->
+			</p>
+			<b class="both"></b>
+		</h1>
+		<img src="{$wx_url}" class="er"/>
+		<p class="tex">扫一扫上方二维码，加我微信</p>
+	</div>
+</div>
+<div class="heada">
+	游戏大厅
+	<span>余芬：{$member_info.money}</span>
+	<a onclick="tanc()">客服</a>
+</div>
+<div class="home">
+	<div class="banner">
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<img src="__IMG__/banner@2x.png" alt=""/>
+				</div>
+				<div class="swiper-slide">
+					<img src="__IMG__/banner@2x.png" alt=""/>
+				</div>
+				<div class="swiper-slide">
+					<img src="__IMG__/banner@2x.png" alt=""/>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="room">
+		<div class="a">
+			<img src="__IMG__/ssc.png" alt="" />
+			<!--<p>-->
+				<!--在线人数：{$online_number}-->
+			<!--</p>-->
+			<a href="{:url('game/cqssc')}">进入房间</a>
+		</div>
+		<div class="a no-a">
+			<img src="__IMG__/car.png" alt="" />
+			<!--<p>-->
+				<!--在线人数：123-->
+			<!--</p>-->
+			<a href="">进入房间</a>
+			<span>
+    				<b>敬请期待</b>
+    		</span>
+		</div>
+	</div>
+</div>
+{include file="common/nav" /}
+</body>
+<script>
+    var swiper = new Swiper('.swiper-container',{
+        loop:true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+    });
+    var swipera = new Swiper('.swiper-containera', {
+        direction: 'vertical',
+        loop:true,
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+        },
+    });
+</script>
+</html>
