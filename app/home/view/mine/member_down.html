@@ -23,12 +23,14 @@
 				<th>ID</th>
 				<th>用户名</th>
 				<th>时间</th>
+				<th>盈亏详情</th>
 			</tr>
 			{foreach $list as $k=>$v}
 			<tr>
 				<td>{$v.id}</td>
 				<td>{$v.mobile}</td>
 				<td>{$v.create_at}</td>
+				<td><a href="{:url('mine/win_lose_test',array('uid'=>$v['id']))}"  title="查看">查看</a></td>
 			</tr>
 			{/foreach}
 		</table>

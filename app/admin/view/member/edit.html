@@ -60,6 +60,58 @@
                                     <span class=" form-control">{$info.money}</span>
                                 </div>
                             </div>
+							
+							<div class="form-group ">
+                                <label  class="control-label col-lg-2">上级推荐码</label>
+                                <div class="col-lg-3">
+									{if $referral_code == 0}
+										<input class=" form-control" name="tid" value="无" type="text" />
+									{else/}
+										<input class=" form-control" name="tid" value="{$referral_code}" type="text"/>
+									{/if}
+								
+                                    <!--<input class=" form-control" name="tid" value="{$referral_code}" type="text" />-->
+                                </div>
+                            </div>
+							
+							<div class="form-group ">
+                                <label  class="control-label col-lg-2">个人推荐码</label>
+                                <div class="col-lg-3">
+									{if $info.referral_code == 0}
+										<span class=" form-control">无</span><span style="color: red; font-weight: bold">温馨提示:</span>1、代理身份生效时，该推荐码才起作用。
+									{else/}
+										<span class=" form-control">{$info.referral_code}</span><span style="color: red; font-weight: bold">温馨提示:</span>1、代理身份生效时，该推荐码才起作用。
+									{/if}
+								
+									<!--<span class=" form-control">{$info.referral_code}</span><span style="color: red; font-weight: bold">温馨提示:</span>1、代理身份生效时，该推荐码才起作用。
+                                    <input class=" form-control" name="referral_code" value="{$info.referral_code}" type="text" />-->
+                                </div>
+                            </div>
+							
+							{if $info.referral_code == 0}
+                           <div class="form-group ">
+                                <label  class="control-label col-lg-2">是否为代理身份</label>
+                                <div class="col-lg-3">
+                                    <select class="form-control" name="is_agency">	
+										<option value="0" selected >否</option>
+										<option value="1">是</option>
+									</select>
+                                </div>
+                            </div>
+                            {else/}
+                            <div class="form-group ">
+                                <label  class="control-label col-lg-2">是否为代理身份</label>
+                                <div class="col-lg-3">
+                                    <select class="form-control" name="is_agency">	
+										<option value="0"  >否</option>
+										<option value="1" selected>是</option>
+									</select>
+                                </div>
+                            </div>
+                            {/if}
+							
+							
+							
                             <div class="form-group">
                                 <div class="col-lg-offset-2 col-lg-10">
                                     <input type="hidden" name="id" value="{$info.id}">

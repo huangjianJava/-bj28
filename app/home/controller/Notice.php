@@ -18,7 +18,7 @@ class Notice extends Base
      */
     public function index(){
         $id = session('uid');
-        $url = 'http://www.001s4.cn?parent_id='.$id;
+        $url = 'http://103.115.44.136?parent_id='.$id;
         return view('',[
          'url'=>$url,
           'uid'=>$id
@@ -70,7 +70,8 @@ class Notice extends Base
      */
     public function ewm(Request $request){
         $id = $request->param('uid');
-        $url = 'http://www.001s4.cn?parent_id='.$id;
+        //$url = 'http://www.001s4.cn?parent_id='.$id;
+		$url = 'http://103.115.44.136/home/login/register.html?rid='.$id;
         vendor('phpqrcode.phpqrcode');
         $size=4;    //图片大小
         $errorCorrectionLevel = "Q"; // 容错级别：L、M、Q、H

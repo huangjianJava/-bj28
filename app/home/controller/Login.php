@@ -291,33 +291,83 @@ class Login extends Controller
         $mobile     = $request->post('mobile');
         $nickname   = $request->post('nickname');
         $password   = $request->post('password');
+		$rid   = $request->post('rid');
+		$referral_code_test   = $request->post('referral_code_test');	
+		
         if(!$mobile || !$nickname || !$password){
             json_return(204,'缺少参数');
         }
-        $parent_id = Cookie::get('parent_id');
-        if($parent_id){
-            $tid = $parent_id;
-        }else{
-            $tid = 0;
-        }
-        $User      = Db::name('member');
-        $user_info = $User->where(array('mobile'=>$mobile))->find();
-        if($user_info){
-            json_return(201,'账号已经注册');
-        }
-        $data['tid']       = $tid;
-        $data['nickname']   = $nickname;
-        $data['mobile']     = $mobile;
-        $data['password']   = data_md5_key($password);
-        $data['create_at']  = time();
-        $data['ip']         = get_client_ip();
-        $data['token']      = md5(rand(11111,9999));
-        if ($User->insert($data)) {
-            json_return(200,'注册成功');
-        } else {
-            json_return(201,'注册失败');
+		
+		
+		$User      = Db::name('member');
+		
+		// 自主注册时填写推荐码
+		if($referral_code_test){
+			$recomemd_user_self = $User->where(array('referral_code'=>$referral_code_test))->find();
+			
+			$user_info = $User->where(array('mobile'=>$mobile))->find();
+			if($user_info){
+				json_return(201,'账号已经注册');
+			}
+			$data['pid']       = $recomemd_user_self['tid'];
+			$data['gid']       = $recomemd_user_self['pid'];
+			
+			$data['tid']       = $recomemd_user_self['id'];
+			$data['nickname']   = $nickname;
+			$data['mobile']     = $mobile;
+			$data['password']   = data_md5_key($password);
+			$data['create_at']  = time();
+			$data['ip']         = get_client_ip();
+			$data['token']      = md5(rand(11111,9999));
+			if ($User->insert($data)) {
+				json_return(200,'注册成功');
+			} else {
+				json_return(201,'注册失败');
 
-        }
+			}
+		}else{	// 分享好友二维码 -》取出推荐人的信息
+			
+			if($rid){
+			$tid = $rid;
+			}else{
+				$tid = 0;
+			}
+			
+			
+			//$parent_id = Cookie::get('parent_id');
+			//if($parent_id){
+				//$tid = $parent_id;
+			//}else{
+			//    $tid = 0;
+		   // }
+			
+			
+			// 分享好友二维码 -》取出推荐人的信息
+			$recomemd_user = $User->where(array('id'=>$tid))->find();
+			
+			$user_info = $User->where(array('mobile'=>$mobile))->find();
+			if($user_info){
+				json_return(201,'账号已经注册');
+			}
+			$data['pid']       = $recomemd_user['tid'];
+			$data['gid']       = $recomemd_user['pid'];
+			
+			$data['tid']       = $tid;
+			$data['nickname']   = $nickname;
+			$data['mobile']     = $mobile;
+			$data['password']   = data_md5_key($password);
+			$data['create_at']  = time();
+			$data['ip']         = get_client_ip();
+			$data['token']      = md5(rand(11111,9999));
+			if ($User->insert($data)) {
+				json_return(200,'注册成功');
+			} else {
+				json_return(201,'注册失败');
+
+			}
+				
+			}
+		
     }
 
     /**

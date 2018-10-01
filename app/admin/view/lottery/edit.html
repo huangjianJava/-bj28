@@ -29,11 +29,16 @@
                     <div class="form">
                         <form class="form-horizontal adminex-form userForm"  method="post" action="{:url('lottery/edit')}">
                             <div class="form-group ">
-                                <label  class="control-label col-lg-2">彩种名称</label>
+                               <!-- <label class="control-label col-lg-2">彩种名称</label>  class=" form-control" -->
                                 <div class="col-lg-6">
-                                    <input class=" form-control" name="name" value="{$data.name}" type="text" />
+                                    <strong style="font-size:20px">彩种名称：</strong><input style="width:180px;" name="name" value="{$data.name}" type="text" /><br/><br/>
+									<strong style="font-size:20px">准入额度：</strong><input style="width:110px;" name="access_quota" value="{$data.access_quota}" type="text" />
                                 </div>
+								
+								
+                               
                             </div>
+							
                             <div class="form-group ">
                                 <label  class="control-label col-lg-2">彩种logo</label>
                                 <div class="col-lg-6">

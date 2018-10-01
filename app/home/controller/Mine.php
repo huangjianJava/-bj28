@@ -13,8 +13,104 @@ use think\Controller;
 use think\Db;
 use think\Request;
 
+// 测试
+use app\admin\model\Cash;
+use app\admin\model\Detail;
+use app\admin\model\Recharge;
+use app\home\controller\Biapi;
+use GatewayClient\Gateway;
+
 class Mine extends Base
 {
+	/**
+     *  9-30
+     *  用于app 测试  会员盈亏
+     */
+    public function win_lose_test(Request $request){
+        
+		//file_put_contents('./lh.log', '---win_lose_test 进来了---', FILE_APPEND|LOCK_EX);
+		
+		
+      
+        $from    = $request->param('from')?$request->param('from').' 00:00:00':date('Y-m-d').' 00:00:00';
+        $to      = $request->param('to')?$request->param('to').' 23:59:59':date('Y-m-d').' 23:59:59';
+        $id      = $request->param('uid');
+		
+		//file_put_contents('./lh.log', '---win_lose_test 参数 ---$from:'.$from, FILE_APPEND|LOCK_EX);
+		//file_put_contents('./lh.log', '---win_lose_test 参数 ---$to:'.$to, FILE_APPEND|LOCK_EX);
+		//file_put_contents('./lh.log', '---win_lose_test 参数 ---$id:'.$id, FILE_APPEND|LOCK_EX);
+        
+        $w =[];
+        $uid = "";
+		if($from && $to){
+            $from = strtotime($from);
+            $to   = strtotime($to);
+            $w['create_at'] = [['>=',$from],['<=',$to]];
+            $w1['update_at'] = [['>=',$from],['<=',$to]];
+        }
+        
+        if($id){
+            $w['uid']  = $id;
+            $w1['uid']  = $id;
+            $uid  = $id;
+        }
+       
+        //总投注
+        $betting_total = Detail::where($w)
+            ->where(array('exp'=>5))
+            ->sum('money');
+			
+		//file_put_contents('./lh.log', '---总投注:---'.$betting_total, FILE_APPEND|LOCK_EX);
+		
+        //总中奖
+        $winning_total = Detail::where($w)
+            ->where(array('exp'=>2))
+            ->sum('money');
+        //总回水
+        $back_total = Detail::where($w)
+            ->where(array('exp'=>3))
+            ->sum('money');
+
+        //总充值
+        $recharge_total = Recharge::where($w1)
+            ->where('status',2)
+            ->sum('money');
+
+        //总提现
+        $withdrawals_total = Db::name('withdrawals')
+            ->where($w1)
+            ->where('status',2)
+            ->sum('money');
+        if($uid) {
+            $profit = $winning_total + $back_total  - $betting_total;
+        }else{
+            $profit = $betting_total - $winning_total - $back_total ;
+        }
+        $profit            = number_format($profit,2);
+        $betting_total     = number_format($betting_total,2);
+        $winning_total     = number_format($winning_total,2);
+        $back_total        = number_format($back_total,2);
+        $recharge_total    = number_format($recharge_total,2);
+        $withdrawals_total = number_format($withdrawals_total,2);
+        if($profit>0){
+            $now_profit = "+".$profit;
+        }elseif ($profit<0){
+            $now_profit = $profit;
+        }else{
+            $now_profit=0.00;
+            $now_profit            = number_format($now_profit,2);
+        }
+        return view('',[
+            'id'=>$id,
+            'profit'=> $now_profit,
+            'betting_total' =>$betting_total,
+            'winning_total'=>$winning_total,
+            'back_total' =>$back_total,
+            'recharge_total'=>$recharge_total,
+            'withdrawals_total'=> $withdrawals_total,
+        ]);
+    }
+	
     /**
      * 个人中心
      */

@@ -75,7 +75,14 @@ class Member extends Admin
             } else {
                 $up_name = '无';
             }
-            $down_number = Db::name('member')->where('tid', $v['id'])->count();
+			
+			// 计算下级总人数(全部)
+            $down_number1 = Db::name('member')->where('tid', $v['id'])->count();
+			$down_number2 = Db::name('member')->where('pid', $v['id'])->count();
+			$down_number3 = Db::name('member')->where('gid', $v['id'])->count();
+			$down_number = $down_number1 + $down_number2 + $down_number3;
+			
+			
             $v['up_name'] = $up_name;
             $v['down_number'] = $down_number;
             $login_ip = Db::name('login_log')->where('uid', $v['id'])->order('id desc')->value('ip');
@@ -102,48 +109,138 @@ class Member extends Admin
      * 下级会员信息
      */
     public function member_down(Request $request){
-        $mobile = $request->param('mobile');
-        $from   = $request->param('from');
-        $to     = $request->param('to');
-        $uid    = $request->param('uid');
-        $tid    = $request->param('tid');
-        $w=[];
-        if($from && $to){
-            $from = strtotime($from);
-            $to = strtotime($to);
-            $w['create_at'] = [['>=',$from],['<=',$to]];
-        }
-        if($mobile){
-            $w['mobile']=$mobile;
-        }
-        if($uid){
-            $w['id']    =$uid;
-        }
-        $w['tid'] = $tid;
+		// 等级筛选处理
+		$rang_select = $request->param('rang_select');
+		$id_myself = $request->param('id_myself');
+		
+		$mobile = $request->param('mobile');
+		$from   = $request->param('from');
+		$to     = $request->param('to');
+		$uid    = $request->param('uid');
+		$tid    = $request->param('tid');
+		$w=[];
+		
+		//file_put_contents('./lh.log', '---等级筛选处理---rang_select:'.$rang_select."__id_myself:".$id_myself, FILE_APPEND|LOCK_EX);
+		
+		if($rang_select && $id_myself){
+			//file_put_contents('./lh.log', '---if($rang_select && $id_myself) 进来了--- ||', FILE_APPEND|LOCK_EX);
+			
+			// 全部
+			if($rang_select==100){
+				//file_put_contents('./lh.log', '---if($rang_select==0) 进来了--- ||', FILE_APPEND|LOCK_EX);
+				
+				$condition = "tid=".$id_myself." or pid=".$id_myself." or gid=".$id_myself;
+				$list = Members::where($condition)->order('id desc')->paginate(20);
+				//$list = Members::where($w)->order('id desc')->paginate(20);
+				
+				$data = $list->all();
+				foreach ( $data as $k=>$v){
+					$money_info    = Db::name('single')
+						->field('sum(money) as money,sum(z_money) as z_money')
+						->where('uid',$v['id'])
+						->find();
+					if(!$money_info['money']){
+						$money_info['money'] = '0.00';
+					}
+					if(!$money_info['z_money']){
+						$money_info['z_money'] = '0.00';
+					}
+					$v['betting_money']     =  $money_info['money'];
+					$v['betting_zmoney']    =  $money_info['z_money'];
+					$v['win_lose']          =  $money_info['z_money']-$money_info['money'];
+					$list[$k] = $v;
+				}
+				return view('',[
+					'list'=>$list,
+					'page'=>$list->render(),
+					'idTest'=>$id_myself,
+				]);
+			}
+			
 
-        $list = Members::where($w)->order('id desc')->paginate(20);
-
-        $data = $list->all();
-        foreach ( $data as $k=>$v){
-            $money_info    = Db::name('single')
-                ->field('sum(money) as money,sum(z_money) as z_money')
-                ->where('uid',$v['id'])
-                ->find();
-            if(!$money_info['money']){
-                $money_info['money'] = '0.00';
-            }
-            if(!$money_info['z_money']){
-                $money_info['z_money'] = '0.00';
-            }
-            $v['betting_money']     =  $money_info['money'];
-            $v['betting_zmoney']    =  $money_info['z_money'];
-            $v['win_lose']          =  $money_info['z_money']-$money_info['money'];
-            $list[$k] = $v;
-        }
-        return view('',[
-            'list'=>$list,
-            'page'=>$list->render(),
-        ]);
+			// 等级
+			if($rang_select==1){
+				//file_put_contents('./lh.log', '---if($rang_select==1){ 进来了--- ||', FILE_APPEND|LOCK_EX);
+				$w['tid']=$id_myself;
+			}
+			if($rang_select==2){
+				$w['pid']=$id_myself;
+			}
+			if($rang_select==3){
+				$w['gid']=$id_myself;
+			}
+			
+			
+			$list = Members::where($w)->order('id desc')->paginate(20);
+			$data = $list->all();
+			foreach ( $data as $k=>$v){
+				$money_info    = Db::name('single')
+					->field('sum(money) as money,sum(z_money) as z_money')
+					->where('uid',$v['id'])
+					->find();
+				if(!$money_info['money']){
+					$money_info['money'] = '0.00';
+				}
+				if(!$money_info['z_money']){
+					$money_info['z_money'] = '0.00';
+				}
+				$v['betting_money']     =  $money_info['money'];
+				$v['betting_zmoney']    =  $money_info['z_money'];
+				$v['win_lose']          =  $money_info['z_money']-$money_info['money'];
+				$list[$k] = $v;
+			}
+			return view('',[
+				'list'=>$list,
+				'page'=>$list->render(),
+				'idTest'=>$id_myself,
+			]);
+			
+			
+		}else{
+			//file_put_contents('./lh.log', '---进来else了---', FILE_APPEND|LOCK_EX);
+			// 之前的
+			
+			if($from && $to){
+				$from = strtotime($from);
+				$to = strtotime($to);
+				$w['create_at'] = [['>=',$from],['<=',$to]];
+			}
+			if($mobile){
+				$w['mobile']=$mobile;
+			}
+			if($uid){
+				$w['id']    =$uid;
+			}
+			$w['tid'] = $tid;
+			
+			$condition = "tid=".$tid." or pid=".$tid." or gid=".$tid;
+			$list = Members::where($condition)->order('id desc')->paginate(20);
+			//$list = Members::where($w)->order('id desc')->paginate(20);
+			
+			$data = $list->all();
+			foreach ( $data as $k=>$v){
+				$money_info    = Db::name('single')
+					->field('sum(money) as money,sum(z_money) as z_money')
+					->where('uid',$v['id'])
+					->find();
+				if(!$money_info['money']){
+					$money_info['money'] = '0.00';
+				}
+				if(!$money_info['z_money']){
+					$money_info['z_money'] = '0.00';
+				}
+				$v['betting_money']     =  $money_info['money'];
+				$v['betting_zmoney']    =  $money_info['z_money'];
+				$v['win_lose']          =  $money_info['z_money']-$money_info['money'];
+				$list[$k] = $v;
+			}
+			return view('',[
+				'list'=>$list,
+				'page'=>$list->render(),
+				'idTest'=>$tid,
+			]);
+			}
+			
     }
 
     /**
@@ -152,8 +249,12 @@ class Member extends Admin
     public function show_list(Request $request){
         $id = $request->param('id');
         $info = Members::get($id);
+		
+		// 查询会员上级的推荐码
+		$result = Members::get($info['tid']);
         return view('edit',[
-            'info'=>$info
+            'info'=>$info,
+			'referral_code'=>$result['referral_code']
         ]);
     }
 
@@ -161,10 +262,50 @@ class Member extends Admin
      * 修改会员信息
      */
     public function edit(Request $request){
-
+	
         if($request->isPost()){
             $data = $request->post();
-        
+			
+			$id = $data['id'];
+			$referralTest = $data['tid'];
+			//file_put_contents('./lh.log', '---修改会员信息,referralTest值---:'.$referralTest, FILE_APPEND|LOCK_EX);
+			
+			// 通过推荐码查询 id
+			//$myTest = Members::where(array('referral_code'=>$referralTest))->value('id');
+			//file_put_contents('./lh.log', '---查询测试,id值---:'.$myTest, FILE_APPEND|LOCK_EX);
+			//$data['tid'] = $myTest;
+			
+			// 为没有推荐码的代理生成6位推荐码
+			$is_agency = $data['is_agency'];
+			//file_put_contents('./lh.log', '---is_agency---:'.$is_agency, FILE_APPEND|LOCK_EX);
+			if($is_agency == 1){
+				//file_put_contents('./lh.log', '---进入 if判断'], FILE_APPEND|LOCK_EX);
+				//file_put_contents('./lh.log', '---进入if 判断---:', FILE_APPEND|LOCK_EX);
+				$seif_info = Members::get($id);
+				if($seif_info['referral_code'] == 0){
+					$random_num = rand(100000,999999);
+					$data['referral_code'] = $random_num;
+					
+					//file_put_contents('./lh.log', '---生成了随机的推荐码 ---:'.$random_num, FILE_APPEND|LOCK_EX);
+				}
+				
+				
+				//file_put_contents('./lh.log', '---自己的推荐码---:'.$seif_info['referral_code'], FILE_APPEND|LOCK_EX);
+			}
+			
+			
+			// 通过推荐码查询出来的会员信息
+			$recomemd_user = Members::where(array('referral_code'=>$referralTest))->find();
+			//$myTest = Members::where(array('referral_code'=>$referralTest))->value('id');
+			//file_put_contents('./lh.log', '---查询测试,id值---:'.$myTest, FILE_APPEND|LOCK_EX);
+			$data['tid'] = $recomemd_user['id'];
+			$data['pid'] = $recomemd_user['tid'];
+			$data['gid'] = $recomemd_user['pid'];
+			
+			//file_put_contents('./lh.log', '---修改会员信息1]---:'.$recomemd_user['id'], FILE_APPEND|LOCK_EX);
+			//file_put_contents('./lh.log', '---修改会员信息2]---:'.$recomemd_user['tid'], FILE_APPEND|LOCK_EX);
+			//file_put_contents('./lh.log', '---修改会员信息3]---:'.$recomemd_user['pid'], FILE_APPEND|LOCK_EX);
+	
             $Member = new Members();
             $map=array(
                 'id'=>$data['id']

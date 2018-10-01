@@ -36,14 +36,21 @@
 
                     <form class="form-inline" action="{:url('')}">
                         <div class="form-group">
-                            <div class="col-md-3">
+                            <!--<div class="col-md-3">
                                 <div class="input-group  custom-date-range">
                                     <input type="text" class="form-control form_datetime" value="{$_GET['from'] ?? ''}" name="from">
                                     <span class="input-group-addon">到</span>
                                     <input type="text" class="form-control form_datetime" value="{$_GET['to'] ?? ''}" name="to">
                                 </div>
                             </div>
-                            <input type="text" name="mobile" class="form-control" value="{$_GET['mobile'] ?? ''}" placeholder="请输入用户名">
+                            <input type="text" name="mobile" class="form-control" value="{$_GET['mobile'] ?? ''}" placeholder="请输入用户名"> -->
+							<select class="form-control" name="rang_select" > 
+                                <option value="100">--全部--</option>
+                                <option value="1">第一级</option>
+                                <option value="2">第二级</option>
+								<option value="3">第三级</option>
+                            </select>
+							<input type="hidden" name="id_myself" value={$idTest} placeholder="存id">
                             <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
                         </div>
                     </form>
@@ -56,6 +63,9 @@
                             <tr>
                                 <!--<th><input class="check-all" type="checkbox"/></th>-->
                                 <th>玩家ID</th>
+								<th>上级ID</th>
+								<th>上上级ID</th>
+								<th>上上上级ID</th>
                                 <th>头像</th>
                                 <th>用户名</th>
                                 <th>昵称</th>
@@ -71,6 +81,9 @@
                             <tr>
                                 <!--<td><input class="ids" type="checkbox" value="{$v.id}" name="ids[]"/></td>-->
                                 <td>{$v.id}</td>
+								<td>{$v.tid}</td>
+								<td>{$v.pid}</td>
+								<td>{$v.gid}</td>
                                 <td>
                                     {if $v.head}
                                     <img style="border-radius: 50%;width: 50px"  src="{$v.head}" class="aaa">

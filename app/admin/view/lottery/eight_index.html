@@ -33,22 +33,24 @@
                             <table class="table table-striped table-hover table-bordered" id="editable-sample">
                                 <thead>
                                 <tr>
-                                    <th>玩法</th>
-                                    <th>赔率设置</th>
-                                    <th>单注最低</th>
-                                    <th>单注最高</th>
-                                    <th>单期最高</th>
-                                    <th>操作</th>
+									<th style="width:100px">玩法</th>
+									<th style="width:70px">房间</th>
+                                    <th style="width:140px">赔率</th>
+                                    <th style="width:90px">单注最低</th>
+                                    <th style="width:90px">单注最高</th>
+                                    <th style="width:90px">单期最高</th>
+                                    <th style="width:75px">操作</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                {foreach $v['play_rules'] as $kk=>$vv}
                                 <tr>
-                                    <td>{$vv.title}</td>
-                                    <td><a href="{:url('eight_pei',array('type'=>$vv.type,'hall'=>$v.hall,'cate'=>$v.cate))}">点击进入赔率设置</a></td>
+									<td>{$vv.title}</td>
+									<td>{$vv.hall}</td>   
+                                    <td><a href="{:url('eight_pei',array('type'=>$vv.type,'hall'=>$v.hall,'cate'=>$v.cate))}">点击设置赔率</a></td>
                                     <td><input type="text" id="from_{$vv.id}" value="{$vv.from}"></td>
                                     <td><input type="text" id="to_{$vv.id}" value="{$vv.to}"></td>
-                                    <td><input type="text" id="max_{$vv.id}" value="{$vv.max}"></td>
+                                    <td><input type="text" id="max_{$vv.id}" value="{$vv.max}"></td>		
                                     <td > <a href="#" style="color: white" class="btn btn-success ajax-get" onclick="edit_bet_number('{$vv.id}')" title="保存">保存</a></td>
                                 </tr>
                                {/foreach}

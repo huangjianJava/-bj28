@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>天猫国际</title>
+	<link rel="stylesheet" href="__CSS__/css.css"/>
+	<script type="text/javascript" src="__JS__/jquery-2.1.0.js"></script>
+	<script type="text/javascript" src="__JS__/js.js"></script>
+	
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type="text/javascript" src="__JS__/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker({dateFormat: "yy-mm-dd"});
+	$( "#datepicker2" ).datepicker({dateFormat: "yy-mm-dd"});
+  } );
+  </script>
+	
+</head>
+<body>
+
+<div class="header">
+	盈亏详情(会员编号:{$id})
+	<a onclick="window.history.go(-1)">
+		<img src="__IMG__/back.png"/>
+	</a>
+</div>
+
+<div>
+					<form action="{:url('',array('uid'=>$id))}">
+							<input type="text" id="datepicker" value="{$_GET['from'] ??  ''}" name="from" placeholder="开始时间">	
+									<span class="input-group-addon">到</span>
+									<input type="text" id="datepicker2" value="{$_GET['to'] ?? ''}" name="to" placeholder="结束时间">	
+                            <button type="submit" value="查询">查询</button>
+                        </div>
+                    </form>
+	
+</div>
+
+<div class="home home-a">
+	<div class="user-zu">
+		<table cellspacing="0">
+			<tr>
+				<th>总盈亏</th>
+				<th>总投注</th>
+				<th>总充值</th>
+				<th>总中奖</th>
+				<th>总提现</th>
+				<th>总回水</th>
+			</tr>
+			
+			<tr>
+				<td>{$profit}</td>
+				<td>{$betting_total|default='0.00'}</td>
+				<td>{$recharge_total|default='0.00'}</td>
+				<td>{$winning_total|default='0.00'}</td>
+				<td>{$withdrawals_total|default='0.00'}</td>
+				<td>{$back_total|default='0.00'}</td>
+				
+			</tr>
+			
+		</table>
+	</div>
+</div>
+<script>
+
+</script>
+</body>
+</html>

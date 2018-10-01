@@ -31,6 +31,11 @@
 			<img src="__IMG__/yan.png" alt=""/>
 			<input type="text" id="nickname" placeholder="请输入昵称"/>
 		</li>
+		<li>
+			<img src="__IMG__/code.png" alt=""/>
+			<input type="text" id="referral_code_test" placeholder="推荐码"/>
+		</li>
+		<input type="text" style="display:none"  id="rid" placeholder="推荐人编号"/>  <!--style="display:none"-->
 	</ul>
 	<button class="sub" id="doRegister">确认</button>
 	<p>
@@ -44,11 +49,31 @@
 <script src="__JS__/layer_mobile/layer.js" ></script>
 <script src="__JS__/rooms.js" ></script>
 <script type="text/javascript">
+	$(document).ready(function(){
+		var rid = GetQueryString("rid");
+		$('#rid').val(rid);
+		
+		if(rid != "undefined" && rid != null && rid != ""){
+			//alert("rid 不等于空");
+			$("#referral_code_test").hide();
+		}
+	})
+	
+	function GetQueryString(name)
+	{
+		 var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+		 var r = window.location.search.substr(1).match(reg);//search,查询？后面的参数，并匹配正则
+		 if(r!=null)return  unescape(r[2]); return null;
+	}
+
+
     $('#doRegister').click(function(){
         var mobile       = $('#mobile').val();
         var password_one = $('#password_one').val();
         var password_two = $('#password_two').val();
         var nickname     = $('#nickname').val();
+		var rid     = $('#rid').val();
+		var referral_code_test     = $('#referral_code_test').val();
         if(nickname == '' || nickname == null){
             my_error('请输入昵称');
             return false;
@@ -71,7 +96,9 @@
             data: {
                 "mobile": mobile,
                 'password': password_one,
-                'nickname': nickname
+                'nickname': nickname,
+				'rid': rid,
+				'referral_code_test':referral_code_test
             },
             dataType: "json",
             async: false,

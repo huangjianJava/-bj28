@@ -78,7 +78,8 @@ class Lottery extends Admin
 
         $cate_name = Db::name('cate')->where(array('id'=>$cate))->value('name');
         $type_name = Db::name('bet')->where(array('cate'=>$cate,'type'=>$type))->value('title');
-        $hall_name = Db::name('hall')->where(array('cate'=>$cate,'hall'=>$hall))->value('name');
+		$hall_name = Db::name('hall')->where(array('cate'=>$cate,'hall'=>$hall))->value('name');
+        //$hall_name = Db::name('hall')->where(array('cate'=>$cate,'hall'=>$hall))->value('name');
         return view('eight_pei',[
             'data_d'=>$data_d,
             'data_s'=>$data_s,
@@ -320,10 +321,27 @@ class Lottery extends Admin
                 $table_name = "at_ssc";
                 break;
             case 6:
-                $table_name = "at_tjssc";
+                $table_name = "at_bjklb";
                 break;
-            case 7:
-                $table_name = "at_gd10";
+			case 7:
+                $table_name = "at_bjklb";
+                break;
+            case 8:
+                $table_name = "at_bjklb";
+                break;	
+			case 9:
+                $table_name = "at_jndklb";
+                break;
+			case 10:
+                $table_name = "at_jndklb";
+                break;
+            case 11:
+                $table_name = "at_jndklb";
+                break;		
+				
+				
+            /*case 7:
+                $table_name = "at_jndklb";
                 break;
             case 8:
                 $table_name = "at_cq10";
@@ -336,7 +354,7 @@ class Lottery extends Admin
                 break;
             case 11:
                 $table_name = "at_hk";
-                break;
+                break;*/
 
         }
         $list = Db::name($table_name)->where($w)->order('id desc')->paginate(20);
